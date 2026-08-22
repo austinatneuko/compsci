@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C6.3 Relational model</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c6.html">C6 Backend Systems</a> · Phase 3, Professional web systems</p>
+<p class="kicker">C6.3 · 120 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Relational model</h1>
+<p class="lede">C6 Backend Systems</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Draw a relational model: tables, keys, foreign keys, a constraint.</li><li>Explain a row as a tuple of a relation, not as a JSON object in a spreadsheet.</li><li>Normalize far enough that one fact does not live in three places.</li><li>Know when a repeated column is a smell.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>A relational database stores facts in tables with named columns and a type per column. A primary key names a row. A foreign key says this value must exist as a key over there. Constraints, NOT NULL, UNIQUE, CHECK, are the database refusing to store a lie. If you skip them because the app will check, you will store a lie the first week the app has a bug.</p><p>A row is a fact with a key. A foreign key is a refusal to store a pointer to nothing. Nullability is a decision, not a default you forgot. If a fact lives in three places, you will update two.</p><p>Normalization is not a purity contest. First normal form: no lists-in-cells we will query as lists. Higher forms: do not copy a user's email into every order if the email is a fact about the user. When history matters, the email at purchase time, you store the snapshot on purpose and name it a snapshot.</p><p>ORMs wait. You will think in tables first. People who start with an ORM start with objects and then wonder why the join is a mystery. We will draw schemas on paper. If you cannot draw it, you cannot migrate it.</p><p>Draw a schema for a prompt I send: people, things, events. Keys and two constraints. I reject until honest. Find the repeated fact in a bad schema I give you. Write the better tables. Closed-resource. No ORM. No AI.</p><p>Backend work in this program is HTTP plus a relational database plus a thin framework, in that order. FastAPI is not the syllabus. If you cannot read a raw request, predict a join, or justify an index, a green OpenAPI page is decoration. We talk to Postgres with parameters before any ORM. Transactions are how two writes become one fact. Validation dies at the edge with a 4xx that names the field. The service you build here is the skeleton of P1. Dishonest schemas get rejected until they are honest. That loop is the course.</p><p>A row is a fact with a key. A foreign key is a refusal to store a pointer to nothing. Nullability is a decision, not a default you forgot. If a fact lives in three places, you will update two. Draw the tables. If you cannot draw them, you cannot migrate them.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Draw a schema for a prompt I send. People, things, events. Keys and two constraints. I reject until honest.</li><li>Find the repeated fact in a bad schema I give you. Write the better tables.</li><li>Closed-resource. No ORM. No AI.</li></ol></div>
+
+<section class="work-log is-locked" id="work-log" data-lesson="c6-3" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-c6-3">Your answer</label>
+<textarea id="work-body-c6-3" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Postgres tutorial, introductory concepts as assigned <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You can draw tables with keys and constraints and say why a fact lives in one place.</p></div>
+<nav class="pager">
+<a href="../lessons/c6-2.html">Previous: C6.2 API design</a>
+<a href="../lessons/c6-4.html">Next: C6.4 SQL I</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
+</body>
+</html>

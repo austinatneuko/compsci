@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C6.9 Validation and errors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c6.html">C6 Backend Systems</a> · Phase 3, Professional web systems</p>
+<p class="kicker">C6.9 · 120 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Validation and errors</h1>
+<p class="lede">C6 Backend Systems</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Validate input at the edge. Reject bad JSON with a 4xx that names the field.</li><li>Do not trust the client: types, ranges, unknown fields.</li><li>Keep 5xx for your bugs, not for user forgot email.</li><li>Log the error id, not the user's password.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>Validation is part of the API contract. FastAPI and Pydantic will do a lot if you let types tell the truth. A string email field that accepts empty is a lie. An integer age that accepts -3 is a lie. Extra fields: reject or ignore, but decide. Bad JSON is a 4xx that names the field.</p><p>Error bodies stay consistent with C6.2. 422 vs 400. We will pick a convention and keep it. Do not return a stack trace to the client. A stack trace is not an error body. Do not return 500 because <code>int(request)</code> failed. That is a 400. 500 is yours.</p><p>Auth errors wait for C8, but you will already return 401/403 as placeholders in the right places rather than 404-to-hide, unless we decide to hide existence on purpose. We will say so. Do not use 404 as a blanket hide unless we said so.</p><p>Tests include a bad body. If your suite only sends happy JSON, you have not tested the API. I will send bodies that should 4xx. Closed-resource. No AI.</p><p>Add validation to the C6.8 service. Tests for missing field, wrong type, and one range. If the suite only sends happy JSON, you have not tested the API.</p><p>Backend work in this program is HTTP plus a relational database plus a thin framework, in that order. FastAPI is not the syllabus. If you cannot read a raw request, predict a join, or justify an index, a green OpenAPI page is decoration. We talk to Postgres with parameters before any ORM. Transactions are how two writes become one fact. Validation dies at the edge with a 4xx that names the field. The service you build here is the skeleton of P1. Dishonest schemas get rejected until they are honest. That loop is the course.</p><p>Bad JSON is a 4xx that names the field. A stack trace is not an error body. 500 is yours. Tests include a bad body. If the suite only sends happy JSON, you have not tested the API. Auth errors will get real codes in C8; do not use 404 as a blanket hide unless we said so.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Add validation to the C6.8 service. Tests for missing field, wrong type, and one range.</li><li>Closed-resource. I will send bodies that should 4xx.</li><li>No AI.</li></ol></div>
+
+<section class="work-log is-locked" id="work-log" data-lesson="c6-9" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-c6-9">Your answer</label>
+<textarea id="work-body-c6-9" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>FastAPI / Pydantic validation, assigned pages <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>Bad input dies at the edge with a 4xx that names the field. 5xx is yours.</p></div>
+<nav class="pager">
+<a href="../lessons/c6-8.html">Previous: C6.8 FastAPI</a>
+<a href="../lessons/c6-10.html">Next: C6.10 Persistence patterns</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
+</body>
+</html>

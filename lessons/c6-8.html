@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C6.8 FastAPI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c6.html">C6 Backend Systems</a> · Phase 3, Professional web systems</p>
+<p class="kicker">C6.8 · 120 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>FastAPI</h1>
+<p class="lede">C6 Backend Systems</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Build a FastAPI app that speaks your HTTP and your SQL.</li><li>Keep handlers thin: validate, call a function, return.</li><li>Use dependency-injected DB connections or an equivalent I approve. No global mystery connection.</li><li>Run the app and hit it with a real HTTP client.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>FastAPI is the Python web framework on this path. It is not the syllabus. HTTP, SQL, and your module seams are the syllabus. Handlers should parse the request, call something testable, and return a status and a body. If your handler is 80 lines of SQL and string building, we split it. Handlers parse, call something testable, and return. SQL in the handler is a seam we will split.</p><p>I will assign FastAPI docs, not a YouTube weekend. You will learn path params, query params, request bodies, response models. You will not wander into every plugin. Pydantic models show up as validation. C6.9 goes deeper. Assigned FastAPI pages only. Do not wander the plugin list.</p><p>Talk to Postgres with parameterized SQL first, not with an ORM. If we add an ORM later, you will already know the SQL it is trying to hide. That is the order in the program.</p><p>Run it. uvicorn or the equivalent. Hit it with curl or httpie so you see the HTTP you learned in C6.1. A green OpenAPI page is not proof you understand the request. A pretty docs page is not that client.</p><p>A small FastAPI service on the course schema: two GET, one POST, tests that hit the app. Closed-resource implementation. Docs as assigned, not wandered. No AI-generated 400-line main.py. If I smell it, we rewrite live. The service should be embarrassing in the way early honest work is embarrassing, not in the way a generated 400-line main is embarrassing. I can tell the difference.</p><p>Backend work in this program is HTTP plus a relational database plus a thin framework, in that order. FastAPI is not the syllabus. If you cannot read a raw request, predict a join, or justify an index, a green OpenAPI page is decoration. We talk to Postgres with parameters before any ORM. Transactions are how two writes become one fact. Validation dies at the edge with a 4xx that names the field. The service you build here is the skeleton of P1. Dishonest schemas get rejected until they are honest. That loop is the course.</p><p>Handlers parse, call something testable, and return. SQL in the handler is a seam we will split. Hit the app with a real HTTP client so you see the protocol from C6.1. A pretty docs page is not that client. Assigned FastAPI pages only. Do not wander the plugin list.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>A small FastAPI service on the course schema: two GET, one POST, tests that hit the app.</li><li>Closed-resource implementation. Docs as assigned, not wandered.</li><li>No AI-generated 400-line main.py. If I smell it, we rewrite live.</li></ol></div>
+
+<section class="work-log is-locked" id="work-log" data-lesson="c6-8" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-c6-8">Your answer</label>
+<textarea id="work-body-c6-8" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>FastAPI docs, assigned pages only: first steps, path params, body <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>A thin FastAPI service you can hit with curl and test without a browser click-path.</p></div>
+<nav class="pager">
+<a href="../lessons/c6-7.html">Previous: C6.7 Transactions I</a>
+<a href="../lessons/c6-9.html">Next: C6.9 Validation and errors</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
+</body>
+</html>

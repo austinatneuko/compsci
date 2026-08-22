@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C6.5 SQL II and indexes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c6.html">C6 Backend Systems</a> · Phase 3, Professional web systems</p>
+<p class="kicker">C6.5 · 120 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>SQL II and indexes</h1>
+<p class="lede">C6 Backend Systems</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Write GROUP BY and an aggregate you can explain.</li><li>Read a simple EXPLAIN enough to see a seq scan vs an index scan.</li><li>Propose one index and say which query it is for.</li><li>Know that an index is a data structure with a write cost.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>GROUP BY partitions rows and lets you count, sum, average per group. HAVING filters groups. If you write GROUP BY and SELECT a column that is neither grouped nor aggregated, Postgres is right to complain. We will get that error on purpose. GROUP BY is a partition plus an aggregate.</p><p>An index is a structure, B-tree by default in Postgres, that makes some lookups and ranges cheap at the cost of space and slower writes. It is not a magic make it fast button. Use The Index, Luke exists because people add indexes they cannot justify and miss the one they need. An index is a structure with a write cost.</p><p>EXPLAIN, and EXPLAIN ANALYZE carefully, is how you see the plan. I do not need you to recite every node type. I need seq scan vs index scan, and a sentence about rows. C13 goes deeper. Today is literacy, not a DBA career.</p><p>You will justify an index from a query, not from a feeling. id is a primary key already has an index. Adding twelve more because a blog said so is not design. Propose one index for one query. Show EXPLAIN before and after on the query it was for. Two sentences.</p><p>Write five grouped queries on the course database. Closed-resource SQL quiz. No AI. Primary keys already have one.</p><p>Backend work in this program is HTTP plus a relational database plus a thin framework, in that order. FastAPI is not the syllabus. If you cannot read a raw request, predict a join, or justify an index, a green OpenAPI page is decoration. We talk to Postgres with parameters before any ORM. Transactions are how two writes become one fact. Validation dies at the edge with a 4xx that names the field. The service you build here is the skeleton of P1. Dishonest schemas get rejected until they are honest. That loop is the course.</p><p>GROUP BY is a partition plus an aggregate. An index is a structure with a write cost. EXPLAIN is literacy, not a DBA career. Propose one index for one query. Twelve indexes because a blog said so is not design. Primary keys already have one.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Write five grouped queries on the course database.</li><li>Add one index. Show EXPLAIN before and after on the query it was for. Two sentences.</li><li>Closed-resource SQL quiz. No AI.</li></ol></div>
+
+<section class="work-log is-locked" id="work-log" data-lesson="c6-5" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-c6-5">Your answer</label>
+<textarea id="work-body-c6-5" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Use The Index, Luke, selected pages I assign <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li><li><div class='ttl'>Postgres, GROUP BY and EXPLAIN, assigned <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You can group, propose one honest index, and read a simple plan.</p></div>
+<nav class="pager">
+<a href="../lessons/c6-4.html">Previous: C6.4 SQL I</a>
+<a href="../lessons/c6-6.html">Next: C6.6 Schema design</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
+</body>
+</html>
