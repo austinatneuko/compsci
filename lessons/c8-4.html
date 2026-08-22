@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C8.4 CI (GitHub Actions)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c8.html">C8 Auth, Quality, Delivery</a> · Phase 3, Professional web systems</p>
+<p class="kicker">C8.4 · 80 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>CI (GitHub Actions)</h1>
+<p class="lede">C8 Auth, Quality, Delivery</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Write a GitHub Actions workflow that installs, tests, and fails on red.</li><li>Treat CI as the gate to submit: if it is red, you are not done.</li><li>Do not store secrets in the workflow file.</li><li>Read a red log without pasting it into a model first.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>CI is a machine that runs your tests on every push the way I would run them. GitHub Actions is the default here. A workflow is YAML that says: on push, use this OS, install, pytest or vitest, exit nonzero on fail. You will read the YAML. You will not treat it as a badge generator. CI is a machine that runs your tests the way I would. Red means you are not done.</p><p>Secrets live in the host's secret store. A key in the YAML or in the repo is a burned key. We practice with dummy secrets first. Secrets are not in the workflow file.</p><p>A red CI you fix by skipping the test is visible in the diff. Don't. A red CI you fix by pinning a version you understand is engineering. Skip a test to go green and I will see the diff. Read a red log before you ask a model.</p><p>Assigned docs, not a marketplace tour of twenty actions. Assigned YAML, not a marketplace tour.</p><p>Green CI on the course app. I push a breaking change on a branch to see it go red, or you do. Closed-resource YAML. Docs assigned. No AI-authored workflow you cannot explain line by line. CI must be green to submit.</p><p>C8 is how a web app becomes something I would type a password into. Authn is not authz. Sessions or tokens you can defend. Integration tests through HTTP. CI that can go red. Docker enough to run twice. A real URL. Logs with a request id. An OWASP-lite checklist with evidence. I will break the URL on purpose. The exit is not a certificate. It is: I create an account, I use the product, you show me the pipeline, a failing test you wrote, and what you would do if the deploy is bad.</p><p>CI is a machine that runs your tests the way I would. Red means you are not done. Secrets are not in the workflow file. Read a red log before you ask a model. Skip a test to go green and I will see the diff. Assigned YAML, not a marketplace tour.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Green CI on the course app. I push a breaking change on a branch to see it go red, or you do.</li><li>Closed-resource YAML. Docs assigned.</li><li>No AI-authored workflow you cannot explain line by line.</li></ol></div>
+
+<section class="work-log is-locked" id="work-log" data-lesson="c8-4" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-c8-4">Your answer</label>
+<textarea id="work-body-c8-4" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>GitHub Actions docs, assigned pages: quickstart, workflow syntax <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>CI is green to submit. You can read a red log. Secrets are not in Git.</p></div>
+<nav class="pager">
+<a href="../lessons/c8-3.html">Previous: C8.3 Integration tests</a>
+<a href="../lessons/c8-5.html">Next: C8.5 Docker I</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
+</body>
+</html>

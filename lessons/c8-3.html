@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C8.3 Integration tests</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c8.html">C8 Auth, Quality, Delivery</a> · Phase 3, Professional web systems</p>
+<p class="kicker">C8.3 · 80 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Integration tests</h1>
+<p class="lede">C8 Auth, Quality, Delivery</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Write an integration test that hits HTTP and database, not just a pure function.</li><li>Keep them few, slow-but-honest, and deterministic.</li><li>Test a permission fail, not only the happy path.</li><li>A green unit suite with no integration test is not enough for C8.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>Unit tests still matter, C4. Integration tests check that the seams meet: handler, auth, SQL, status code. You will spin a test database or a transaction rollback scheme I approve. Hitting prod from a test is a fail. An integration test hits HTTP and the database.</p><p>They are slower. So you write fewer, on the paths that would embarrass you: signup, login, create-a-thing, cannot-read-another-user's-thing. If those are green and your units are green, I will believe more than if you have 200 units and zero HTTP tests. Two hundred unit tests and zero HTTP tests is how authz holes ship.</p><p>Determinism: no sleep for three seconds, no real network to a third party, fake it, no dependence on wall-clock without freezing it. Flaky tests get deleted or fixed. They do not get run again. Sleeping in a test is a fail. Hitting production from a test is a fail.</p><p>Add integration tests for authz fail and one create path. CI will run them in C8.4. Closed-resource. No AI-generated 40-file test harness. A permission fail is tested through HTTP, not only in a helper.</p><p>Few, deterministic, including a permission fail. CI will run these next.</p><p>C8 is how a web app becomes something I would type a password into. Authn is not authz. Sessions or tokens you can defend. Integration tests through HTTP. CI that can go red. Docker enough to run twice. A real URL. Logs with a request id. An OWASP-lite checklist with evidence. I will break the URL on purpose. The exit is not a certificate. It is: I create an account, I use the product, you show me the pipeline, a failing test you wrote, and what you would do if the deploy is bad.</p><p>An integration test hits HTTP and the database. Few, deterministic, including a permission fail. Sleeping in a test is a fail. Hitting production from a test is a fail. Two hundred unit tests and zero HTTP tests is how authz holes ship. CI will run these next.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Add integration tests for authz fail and one create path. CI will run them in C8.4.</li><li>Closed-resource. No AI-generated 40-file test harness.</li></ol></div>
+
+<section class="work-log is-locked" id="work-log" data-lesson="c8-3" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-c8-3">Your answer</label>
+<textarea id="work-body-c8-3" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Testing docs I assign for the stack <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li><li><div class='ttl'>Google Testing Blog, one post on smaller tests vs integration <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>A permission fail is tested through HTTP, not only in a helper.</p></div>
+<nav class="pager">
+<a href="../lessons/c8-2.html">Previous: C8.2 Sessions, cookies, JWT (and when JWT is a mistake)</a>
+<a href="../lessons/c8-4.html">Next: C8.4 CI (GitHub Actions)</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
+</body>
+</html>
