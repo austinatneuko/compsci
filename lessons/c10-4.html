@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C10.4 Threads</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c10.html">C10 Operating Systems and Concurrency</a> · Phase 6 — Computer systems</p>
+<p class="kicker">C10.4 · 100 h course · post-gate <span class="pill locked">Locked</span></p>
+<h1>Threads</h1>
+<p class="lede">C10 Operating Systems and Concurrency</p>
+<div class='banner'><strong>Locked.</strong> Until Gate A. Systems depth and remaining CS wait until you can apply. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Define a thread as a schedulable stack inside a process.</li><li>Share memory on purpose; say what is shared vs not.</li><li>Write one threaded program that is wrong, then say why.</li><li>Do not “just add threads” for speed without a story.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>Threads share the heap and globals; each has a stack and registers. That is why they are cheap to communicate and expensive to get right. Processes share nothing by default (except what you ask for). C-syslit mentioned this; now you will write it.</p><p>A data race is undefined in C’s memory model and a bug in every language. You will produce one (a counter++) and watch it lose increments. Then C10.5.</p><p>Python’s GIL is a footnote: threads may not speed CPU-bound Python. That does not make races impossible (I/O, C extensions). Do not hide in the GIL as a moral.</p><p>OS and concurrency is processes, virtual memory, files, threads, locks, deadlock, a short scheduler, and one real artifact. OSTEP is the text. xv6 or a user-level thread package or a tiny filesystem — I designate one, not the whole MIT course. The exit is a concurrent bug you can fix with a named invariant, and a read you can explain. Just add a lock is a sentence we will kill with an example.</p><p>Shared heap, private stacks. Produce a racy counter and watch lost increments. The GIL is a footnote, not a moral. Do not add threads for speed without a story. What is shared is the written question.</p><p>Concurrency bugs are not fixed by hoping. Name the invariant. Name the missing one. Change one thing. The artifact is there so you lived in the basement, not so you can sticker a portfolio. OSTEP homeworks are assigned chapters, not the whole book in a weekend. I designate the build so we finish.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>A racy counter. Evidence (lost increments). Closed-resource.</li><li>Written: what is shared.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>OSTEP — threads, assigned <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You can say what a thread shares and show a race.</p></div>
+<nav class="pager">
+<a href="../lessons/c10-3.html">Previous: C10.3 Files and I/O</a>
+<a href="../lessons/c10-5.html">Next: C10.5 Synchronization</a>
+</nav>
+
+<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
