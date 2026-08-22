@@ -6,6 +6,12 @@ document.documentElement.dataset.ok = "1";
 (function () {
   var path = location.pathname || "";
   var prefix = /\/(lessons|courses)\//.test(path) ? "../assets/" : "assets/";
+  if (!document.querySelector("link[href$=\"work.css\"]")) {
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = prefix + "work.css";
+    document.head.appendChild(link);
+  }
   if (document.querySelector("script[src$=\"config.js\"]")) return;
   var cfg = document.createElement("script");
   cfg.src = prefix + "config.js";
