@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1c1610">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>C1.7 Testing a function</title>
+<title>C1.7 File I/O</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/app.css">
+<link rel="stylesheet" href="../assets/work.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -25,30 +26,24 @@
 <div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
 </aside>
 <main class="main" id="main"><div class="inner">
-
-<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c1.html">C1 Programming Fundamentals in Python</a> · Phase 1, Foundations</p>
-<p class="kicker">C1.7 · 100 h course · pre-gate <span class="pill locked">Locked</span></p>
-<h1>Testing a function</h1>
-<p class="lede">C1 Programming Fundamentals in Python</p>
-<div class='banner'><strong>Locked.</strong> Because C0 module 3, editor and terminal workflow, is not mastered yet. C1 can start in parallel only after that. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
-
-<h2>Objectives</h2>
-<ul class='obj'><li>Write a pytest function that calls your code and asserts a specific result.</li><li>Separate the example you printed while hacking from a test that will still be there Tuesday.</li><li>Cover an edge. Empty, one item, a tie, a missing file, whatever your docstring promised.</li><li>Run tests from the terminal and read a failure as a diagnosis.</li><li>Treat a test that cannot fail as not a test.</li></ul>
-<h2>Teaching</h2>
-<div class="prose"><p>A test is a program that checks another program. That sounds circular and is the whole job. You pick a concrete input, you know the output, or the error, that the contract demands, you call the function, you assert. If the function changes later and the contract does not, the test fails, and you just got a letter from last week's self.</p><p>We use pytest because it is the default in this program's Python path. A test file is named <code>test_*.py</code> or <code>*_test.py</code>. A test function is named <code>test_*</code>. Inside, <code>assert</code> a boolean. pytest rewrites the assert so a failure shows both sides. You do not need unittest's ceremony this month.</p><p>What to test. The examples in your docstring, then one edge the docstring mentioned, then one error path you raise. What not to test. The existence of a function, <code>assert mean is not None</code>. The ability of Python to add 1 and 1. The exact wording of a message you will change every hour. Do not assert on printed output if you can return a value. Returning is what made C1.3 load-bearing.</p><p>A test that cannot fail is not a test. <code>assert True</code> is a joke. A test that copies the implementation, <code>assert mean(xs) == sum(xs)/len(xs)</code> when the body is that line, is a tautology. It still has some value as a regression if the body changes, and none as a specification if you derived both from the same thought. Prefer independently computed fixtures. <code>assert mean([2, 4, 6]) == 4</code>.</p><p>Run <code>pytest</code> from the project directory. A failing test is a gift with a file and a line. You will not delete the test to make the suite green. You will not mark it skipped unless I say the contract changed. Green through deletion is a kind of fraud I can see in <code>git diff</code>.</p><p>This lesson is the start of a habit C4 will make law. You will not wait until the function is done to test. You will write the contract, a test that could fail, then the body. If that is too doctrinaire for a six-line function, write the body first and the test before you commit. The commit with the function and no test is the one I will send back.</p><p>Closed-resource. No model writing your tests. A model will assert the implementation and miss the empty list. That miss is the point of the lesson.</p></div>
-<h2>Work</h2>
-<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
-<div class="work"><ol><li>Install pytest if needed, <code>pip</code> in the environment I approved. Run <code>pytest</code> in a folder with one deliberate failing test so you see a failure. Then fix it.</li><li>Add tests for <code>mean</code>, word count, and one file function. Include empty-or-missing paths you promised in docstrings.</li><li>Write one test that you expect to raise, <code>pytest.raises</code>. Point it at a real contract, not at <code>1/0</code>.</li><li>Commit tests in the same repo as the code. <code>pytest</code> must be the command I run.</li><li>Closed-resource. No AI. Weekly quiz includes what does this failure say.</li></ol></div>
-<h2>Assigned reading</h2>
-<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
-<ul class='reading locked-list'><li><div class='ttl'>pytest documentation, get started and assert, assigned pages only <span class="pill locked">Locked</span></div><p class='note'>Do not wander into fixtures and plugins this week unless I assign them.</p></li><li><div class='ttl'>Selected thoughts from Google Testing Blog. I will paste one short post in chat. <span class="pill locked">Locked</span></div><p class='note'>One post, not the archive.</p></li></ul>
-<h2>Mastery</h2>
-<div class="paper"><p>You can write and run a pytest file that would fail if the function were wrong, including an edge and an error path. I run pytest. The page does not.</p></div>
-<nav class="pager">
-<a href="../lessons/c1-6.html">Previous: C1.6 Errors and exceptions</a>
-<a href="../lessons/c1-8.html">Next: C1.8 Recursion I</a>
-</nav>
-
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c1.html">C1 Programming Fundamentals in Python</a> · Phase 1, Foundations</p><header class="chapter-head"><p class="chapter-meta">C1 · Harvard CS50P · File I/O</p><h1>File I/O</h1><p class="time-est">180 minutes · <span class="pill locked">Locked</span></p></header><p class="source-line">Official: Harvard CS50P, week 6 · <a href="https://cs50.harvard.edu/python/">course home</a> · <a href="https://cs50.harvard.edu/python/notes/6/">notes</a></p><div class="prose wrap-brief"><p>Watch week 6. Their problem set on their site.</p><p>I grade file work you can do without a GUI save dialog.</p></div><div class='banner'><strong>Locked.</strong> C1 starts after C0.3 mastered. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div><section class="watch" id="watch"><p class="section-label">Watch</p><p class="watch-title">CS50P week 6: File I/O</p><div class="video-wrap"><iframe src="https://www.youtube.com/embed/KD-Yoel6EVQ" title="CS50P week 6: File I/O" allowfullscreen></iframe></div></section><section class="read" id="read"><p class="section-label">Read</p><p class="watch-notes"><a href="https://cs50.harvard.edu/python/notes/6/">CS50P week 6 notes</a></p><p class="lock-note">URL is here so the map is complete. Materials stay locked. Do not start until this lesson is current.</p></section><section class="implement" id="do"><p class="section-label">Do on their site</p><p class="lock-note">Listed so you can see the work. Not assigned. Do not start. No solutions on this site.</p><ol class="do-official"><li><a href="https://cs50.harvard.edu/python/psets/6/lines/">Lines of Code</a></li><li><a href="https://cs50.harvard.edu/python/psets/6/pizza/">Pizza Py</a></li><li><a href="https://cs50.harvard.edu/python/psets/6/scourgify/">Scourgify</a></li><li><a href="https://cs50.harvard.edu/python/psets/6/shirt/">CS50 P-Shirt</a></li></ol></section><section class="check" id="knowledge-check"><p class="section-label">CompSci check</p><p class="lock-note">Answer in your own words. Answers are not on this page.</p><details class='think'><summary>1. What is the difference between a file on disk and a string in memory?</summary><p>Think it through. Write your answer in your own words. I am not printing an answer here.</p></details><details class='think'><summary>2. Why do you close a file, or use <code>with</code>?</summary><p>Think it through. Write your answer in your own words. I am not printing an answer here.</p></details><details class='think'><summary>3. What goes wrong if you assume a file exists?</summary><p>Think it through. Write your answer in your own words. I am not printing an answer here.</p></details></section>
+<section class="work-log is-locked" id="work-log" data-lesson="c1-7" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-c1-7">Your answer</label>
+<textarea id="work-body-c1-7" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+<section class="mastery-sec" id="mastery"><p class="section-label">Mastery</p><div class="paper"><p>You can read a file, write a file, and say what happens if the path is wrong. I will move the file.</p></div></section><nav class="pager"><a href="../lessons/c1-6.html">Previous: C1.6 Unit Tests</a><a href="../lessons/c1-8.html">Next: C1.8 Regular Expressions</a></nav>
 <p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
 </div></main>
 </div>
@@ -59,5 +54,7 @@
 <a class="" href="../about.html">About</a>
 </nav>
 <script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
 </body>
 </html>
