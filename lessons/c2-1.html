@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C2-lite.1 Cost model and arrays</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c2.html">C2-lite Data Structures (pre-gate)</a> · Phase 2 — Structures and construction</p>
+<p class="kicker">C2-lite.1 · 60 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Cost model and arrays</h1>
+<p class="lede">C2-lite Data Structures (pre-gate)</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>State a cost model: time and memory in terms of n, not 'fast on my laptop'.</li><li>Implement a static array picture and a dynamic array (Python list as amortized array).</li><li>Explain why append is usually cheap and why insert-at-front is not.</li><li>Use big-O as a sentence you can say, not as decoration on a slide.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>A data structure is a way to store values plus the costs of the operations you actually run. If you cannot name the operations — get by index, append, insert at i, scan — you do not have a structure, you have a pile. This course makes you implement the piles juniors actually use, and state the bill.</p><p>An array (in the machine sense) is a contiguous block: index i is arithmetic, not a walk. That is why <code>a[i]</code> is constant time in the model we will use. Python’s <code>list</code> is a dynamic array: it over-allocates, so most <code>append</code>s write into spare room (cheap) and some <code>append</code>s copy the whole block into a bigger one (expensive, rare). Amortized constant append is the phrase. Insert at the front is linear because everything else moves. If that sentence is not boring by the end of the week, we stay here.</p><p>The cost model is not a personality quiz about which company invented big-O. For a given operation, how does the work grow when the collection grows? Constant, logarithmic, linear, linearithmic, quadratic. I want those words used about your code. “It ran fine” is not a cost.</p><p>You will implement a small dynamic array in Python (a class that holds a list and a size, with an explicit grow) so the over-allocation is your code, not a rumor about CPython. Then you will use the built-in list like a professional, with the picture in your head.</p><p>C2-lite is judgment plus implementation, not a museum of types. A structure is the operations you need and the bill they send when n grows. You already use lists and dicts; now you must be able to build the ones a junior actually needs and say when a list beats a hash. Heaps and graphs-as-ADTs wait until after the gate. That is not because they are optional forever. It is because the hiring bar uses lists, hashes, and trees, and we will not pretend you implemented a heap if we did not sit with one. Every module ends with costs you can say out loud.</p><p>Amortized analysis is the first time a cost and a single operation disagree. One append copies the world; most appends do not. If you only time n=10 you will believe insert-at-front is fine. If you only recite O(1) you will be surprised in an interview when they ask about the copy. Draw the array before and after a grow. That drawing is the lesson, not the class wrapper.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Implement <code>DynArray</code> with get, set, append, insert, pop. Tests for grow. Closed-resource.</li><li>Time (even crudely) append-at-end vs insert-at-0 for n = 10_000. Write the numbers and the explanation.</li><li>State, without notes, the cost of index, append (amortized), insert at i.</li><li>No AI. Timed quiz on costs.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Miller/Ranum — analysis and lists (open text, assigned sections) <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li><li><div class='ttl'>My assignment: dynamic array <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You can implement a dynamic array and say the cost of the usual operations, including a case where a list is the wrong tool.</p></div>
+<nav class="pager">
+<a href="../lessons/p0-1.html">Previous: P0.1 Specify and build a command-line tool</a>
+<a href="../lessons/c2-2.html">Next: C2-lite.2 Linked lists</a>
+</nav>
+
+<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

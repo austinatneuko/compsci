@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C2-lite.2 Linked lists</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c2.html">C2-lite Data Structures (pre-gate)</a> · Phase 2 — Structures and construction</p>
+<p class="kicker">C2-lite.2 · 60 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Linked lists</h1>
+<p class="lede">C2-lite Data Structures (pre-gate)</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Implement a singly linked list with head (and tail if you need it).</li><li>Walk, insert at head, delete a node you can name.</li><li>Contrast index cost with arrays.</li><li>Draw boxes and arrows; refuse to debug a list only by printing.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>A linked list stores each item in a node that points at the next. There is no arithmetic index. To get the k-th item you walk k steps. That is the whole trade: inserts and deletes at a position you already hold can be cheap; random access is not.</p><p>You will write <code>Node</code> and <code>LinkedList</code>. Head is mandatory. Tail is a gift for append. Off-by-one bugs live at the empty list, the one-node list, and the last node. Tests that skip those are theater. I will not accept a list that only works when it already has three elements.</p><p>Mutation is pointer surgery. Draw the arrows before you write the assignment statements. If you assign in the wrong order you lose the rest of the chain. This is the first structure where “run it and see” is slower than a 20-second sketch.</p><p>We are not building <code>deque</code> from scratch to be cute. We are making sure that when C2.3 wraps this as a queue, you know what the wrap is hiding. Python’s <code>list</code> remains the default sequence in application code. Linked lists are here because interviews and systems still use the idea, and because you cannot choose a structure you have never felt.</p><p>C2-lite is judgment plus implementation, not a museum of types. A structure is the operations you need and the bill they send when n grows. You already use lists and dicts; now you must be able to build the ones a junior actually needs and say when a list beats a hash. Heaps and graphs-as-ADTs wait until after the gate. That is not because they are optional forever. It is because the hiring bar uses lists, hashes, and trees, and we will not pretend you implemented a heap if we did not sit with one. Every module ends with costs you can say out loud.</p><p>The empty list and the last node are not edge cases you add after the happy path. They are the path. A function that walks until next is None will skip a one-node list if you wrote the loop wrong. Tests that only use three nodes are how those bugs ship. Draw every pointer assignment as two pictures: before and after. If you cannot, do not type yet.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Implement singly linked list: push_front, pop_front, find, insert_after, to_list. Tests include empty and one-node.</li><li>On paper, draw insert_after on a three-node list. Bring the drawing.</li><li>Write two sentences: when a linked list beats a dynamic array, and when it loses badly.</li><li>Closed-resource. No solutions from the web. Timed quiz.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Miller/Ranum — linked lists, assigned sections <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You implement the list, draw a pointer change, and state the cost of index vs insert-at-head.</p></div>
+<nav class="pager">
+<a href="../lessons/c2-1.html">Previous: C2-lite.1 Cost model and arrays</a>
+<a href="../lessons/c2-3.html">Next: C2-lite.3 Stacks/queues</a>
+</nav>
+
+<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
