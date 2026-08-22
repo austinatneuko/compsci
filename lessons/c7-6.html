@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C7.6 Forms and errors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c7.html">C7 Frontend Systems (TypeScript + React)</a> · Phase 3, Professional web systems</p>
+<p class="kicker">C7.6 · 90 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Forms and errors</h1>
+<p class="lede">C7 Frontend Systems (TypeScript + React)</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Build a form whose labels, errors, and submit path you can defend.</li><li>Validate on the client for UX, on the server for truth.</li><li>Set focus to the first error. Do not <code>alert()</code> a novel.</li><li>Meet a minimum a11y bar I will test with a keyboard.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>Forms are where products become real and where accessibility dies if you use a div as a button. Native form, label, button type submit. Errors associated with fields, aria-describedby or equivalent we agree on. I will tab through your UI. If I cannot, you are not done. A form is native elements plus errors associated with fields.</p><p>Client validation is kindness. Server validation is the law, C6.9. Showing a 422 field error in the form is the connection between the two courses. Client checks are kindness. Server checks are the law.</p><p>Disabled submit buttons that never explain themselves are a UX shrug. We will either explain or allow submit and show the error. Pick one.</p><p>This is the third rebuild: the form against your API. P1 will have one of these that I use as a stranger. I will tab through it. I will submit garbage. 4xx must be visible.</p><p>A real form against your API. Keyboard-only path. Error from the server displayed. Closed-resource. No AI-generated form library unless I assign one. Accessibility is a keyboard I will actually use, not a badge.</p><p>Frontend work is TypeScript as a language, the DOM as a tree, React as a view layer, and then your API. We rebuild a small UI three times so the library cannot become physics. Types stay honest: unions for states, no any, no data while loading. Forms have labels and errors a keyboard can reach. The exit is brownfield: add a feature to an app you have not seen. Tutorial-hell YouTube is excluded on purpose. Official docs, selected pages. If you cannot read a file you did not write, you are not done, even if your greenfield demo looks pretty.</p><p>A form is native elements plus errors associated with fields. Client checks are kindness. Server checks are the law. I will tab through it. I will submit garbage. 4xx must be visible. This is the third rebuild, against your API, and P1 will have one I use as a stranger.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>A real form against your API. Keyboard-only path. Error from the server displayed.</li><li>I will try to submit garbage. 4xx must be visible.</li><li>Closed-resource. No AI-generated form library unless I assign one.</li></ol></div>
+
+<section class="work-log is-locked" id="work-log" data-lesson="c7-6" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-c7-6">Your answer</label>
+<textarea id="work-body-c7-6" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>React docs, forms as assigned <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li><li><div class='ttl'>A short a11y note I provide <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>A stranger can complete the form with a keyboard and see errors. Types stay honest.</p></div>
+<nav class="pager">
+<a href="../lessons/c7-5.html">Previous: C7.5 Routing and fetching</a>
+<a href="../lessons/c7-7.html">Next: C7.7 Reading unfamiliar frontend code</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
+</body>
+</html>

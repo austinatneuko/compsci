@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C7.4 React model</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c7.html">C7 Frontend Systems (TypeScript + React)</a> · Phase 3, Professional web systems</p>
+<p class="kicker">C7.4 · 90 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>React model</h1>
+<p class="lede">C7 Frontend Systems (TypeScript + React)</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Explain React as a view layer: state in, tree out, it updates the DOM.</li><li>Write a function component with props and useState.</li><li>Do not mutate state in place.</li><li>Keep effects small. Do not fetch in a random render body without a plan.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>React's model: you write a function of state and props that returns a description of the UI. React compares and updates the DOM. You do not surgically update a node unless you drop to an escape hatch. If you mutate a state object and wonder why nothing rendered, you did not change the state React knows about. State in, description out, React updates the tree. Mutating a state object in place is a non-update.</p><p>Official docs, selected. No tutorial-hell YouTube path. Hooks we need: useState, useEffect with a dependency array you can explain, later useMemo only if I say. You will not collect hooks like pins. useEffect needs a dependency array you can explain. We do not collect hooks.</p><p>Components are functions. Props are the arguments. Lifting state is the move when two children need the same fact. Prop-drilling through five layers is a smell we will name. A context API is a tool, not the first move.</p><p>We rebuild the vanilla UI in React. Same job. You will feel what the library is paying for. Official docs. Same UI as C7.3 so you can feel what you are paying for.</p><p>Rebuild the C7.3 UI in React plus TS. Types honest. Closed-resource. I will ask you to explain one re-render. Be ready. No AI. Official docs only.</p><p>Frontend work is TypeScript as a language, the DOM as a tree, React as a view layer, and then your API. We rebuild a small UI three times so the library cannot become physics. Types stay honest: unions for states, no any, no data while loading. Forms have labels and errors a keyboard can reach. The exit is brownfield: add a feature to an app you have not seen. Tutorial-hell YouTube is excluded on purpose. Official docs, selected pages. If you cannot read a file you did not write, you are not done, even if your greenfield demo looks pretty.</p><p>State in, description out, React updates the tree. Mutating a state object in place is a non-update. useEffect needs a dependency array you can explain. We do not collect hooks. Official docs. Same UI as C7.3 so you can feel what you are paying for.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Rebuild the C7.3 UI in React plus TS. Types honest. Closed-resource.</li><li>I will ask you to explain one re-render. Be ready.</li><li>No AI. Official docs only.</li></ol></div>
+
+<section class="work-log is-locked" id="work-log" data-lesson="c7-4" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-c7-4">Your answer</label>
+<textarea id="work-body-c7-4" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Official React docs: your first component, state, thinking in React, assigned <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You can rebuild a small UI in React and explain state to view to DOM.</p></div>
+<nav class="pager">
+<a href="../lessons/c7-3.html">Previous: C7.3 DOM and the browser</a>
+<a href="../lessons/c7-5.html">Next: C7.5 Routing and fetching</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
+</body>
+</html>
