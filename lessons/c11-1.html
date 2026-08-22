@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C11.1 Layers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c11.html">C11 Computer Networking</a> · Phase 6 — Computer systems</p>
+<p class="kicker">C11.1 · 60 h course · post-gate <span class="pill locked">Locked</span></p>
+<h1>Layers</h1>
+<p class="lede">C11 Computer Networking</p>
+<div class='banner'><strong>Locked.</strong> Until Gate A. Systems depth and remaining CS wait until you can apply. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Name layers (application, transport, network, link) as a map, not as a religion.</li><li>Place HTTP, TCP, IP, Ethernet (or Wi-Fi) on the map.</li><li>Know what each layer’s header is roughly for.</li><li>Refuse “the OSI seven-layer tattoo” as a substitute for a packet you can read.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>Networking is how you stop treating HTTP as magic. Layers are a map: your HTTP message is carried in a TCP segment, in an IP packet, on a link. Each hop understands some headers and forwards. Kurose/Ross selected is the text.</p><p>C-syslit walked a URL. This course fills the hops you waved at. You will still not become a network engineer. You will read a packet capture in C11.7.</p><p>Networking is how HTTP stops being magic. Layers, sockets, TCP, a short DNS and routing, HTTP as bytes, TLS as a job, a packet lab. You will write a small TCP client and server and explain a slow API with the network, not the framework. C-syslit was the seatbelt. This is the course. You will not become a network engineer. You will read a capture without drowning.</p><p>Place HTTP, TCP, IP, and the link on one map. Headers at each layer have a job. A seven-layer tattoo is not a packet you can read. C-syslit walked a URL. This course fills the hops you waved at. Written placement, closed.</p><p>A capture is evidence. A slogan about the cloud is not. Client and server you wrote are evidence. Kurose and Ross selected, Wireshark labs I assign. Optional CS144 is depth, not an excuse to skip the small socket work. Explain slowness with hops and windows and loss, then maybe the handler.</p><p>A capture is evidence. A slogan about the cloud is not. Client and server you wrote are evidence. Kurose and Ross selected, Wireshark labs I assign. Optional CS144 is depth, not an excuse to skip the small socket work. Explain slowness with hops and windows and loss, then maybe the handler.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Written: place a URL walk on the layers. Closed-resource.</li><li>No AI layer essay.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Kurose/Ross — intro/layers, assigned <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You can place HTTP/TCP/IP on a layer map without a meme.</p></div>
+<nav class="pager">
+<a href="../lessons/c10-8.html">Previous: C10.8 A systems build</a>
+<a href="../lessons/c11-2.html">Next: C11.2 Sockets</a>
+</nav>
+
+<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
