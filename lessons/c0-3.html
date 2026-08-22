@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C0.3 Editor and terminal workflow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c0.html">C0 Computing Environment</a> · Phase 1 — Foundations</p>
+<p class="kicker">C0.3 · 30 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Editor and terminal workflow</h1>
+<p class="lede">C0 Computing Environment</p>
+<div class='banner'><strong>Locked.</strong> Because C0.2 Filesystem and permissions is not mastered yet. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Separate the terminal (a window) from the shell (a program) from the editor (where you change files).</li><li>Edit a file without leaving a keyboard workflow: open, change, save, return to the prompt.</li><li>Survive the first hour of a real editor — vim, nano, or VS Code’s integrated terminal — without rage-quitting.</li><li>Run a program you just edited and look at the error in the same place you type.</li><li>Choose one editor and stay with it through C0. Tourism is not a workflow.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>Three programs are about to share one rectangle on your screen, and beginners mash them into one idea called “the terminal.” They are not one idea. The terminal emulator is a window that draws text and sends keystrokes. The shell is the program usually running inside it, waiting for a line. The editor is a different program that takes over that window, or a neighboring one, so you can change the bytes in a file. When you are “stuck in vim,” you did not break Linux. You entered a program that uses the keyboard differently from the shell, and you have not yet learned how to leave.</p><p>Why this lesson exists before Python: every later course assumes you can change a file, run it, read the failure, change it again, and keep a trail. If that loop requires a mouse, a different app, a cloud pastebin, and a prayer, you will avoid it. Avoiding the loop is how people stay beginners.</p><p>You may use VS Code. Many professionals do. I do not care about the brand. I care that you can (1) open a folder that is a project, (2) edit a file as text, (3) run a command in an integrated or adjacent terminal against that same folder, and (4) see the file that failed. If your editor cannot do that, it is a notepad, not a workspace.</p><p>I also want you to be able to edit on a machine that has no VS Code — a server, a container, a recovery shell. That means at least one terminal editor. <code>nano</code> is honest and small. <code>vim</code> is everywhere and hostile for an hour. I will not romanticize vim. I will make sure you can open, change, save, and quit, because someday the only editor on the box will be vi. The keystrokes are a tax. Pay it once.</p><p>Workflow is a habit, not a plugin list. You work in a directory that is the project. You do not spray files across Desktop. You keep the terminal pointed at that directory. You run the program from there so relative paths mean what you think. You read the traceback from the top: file, line, message. Then you go to that line on purpose, not by scrolling until something looks familiar.</p><p>Copy and paste from the web into an editor will waste a day of C1 if you do not also look at what you pasted. Invisible characters, smart quotes, and mixed tabs are not theoretical. We will set the editor to show whitespace and to use spaces. That is not aesthetics. That is so Python and Git see the same file you think you see.</p><p>This lesson is also about attention. An editor with twenty extensions, a theme marketplace, and AI autocomplete on day three is a carnival. We will add tools when a job requires them. For C0, the job is: change a file, run a command, read the result, repeat without breaking the chain.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Pick one GUI editor (VS Code or equivalent) and one terminal editor (nano or vim). Write the names in chat so I know which pair you own.</li><li>Closed-resource: in the terminal editor, create a file named <code>notes.txt</code> in a disposable directory. Write three lines. Save. Quit. <code>cat</code> the file from the shell. If you cannot quit, that is the assignment — learn the exit, do not force-kill the window.</li><li>In your GUI editor, open that same directory. Change one line. Save. Back in the terminal, <code>cat</code> again. Confirm you are looking at one tree, not two copies.</li><li>Without a mouse if you can: switch from editor to terminal, run <code>ls</code>, switch back. Time yourself. The number does not matter. The loop does.</li><li>Do not install a vim config from the internet. Do not install twenty VS Code extensions. If AI autocomplete is on, turn it off for C0.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>MIT Missing Semester 2026, lecture 3 — Editors (assigned sections) <span class="pill locked">Locked</span></div><p class='note'>I will mark the minutes and the exercises in chat. Do not binge the whole lecture as a substitute for the save-quit drill.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You can open, change, save, and leave a terminal editor without panic. You can edit a project file and run a command against the same directory. You can point at the line an error named. Ratings move when I watch the loop, not when the page is open.</p></div>
+<nav class="pager">
+<a href="../lessons/c0-2.html">Previous: C0.2 Filesystem and permissions</a>
+<a href="../lessons/c0-4.html">Next: C0.4 Git I</a>
+</nav>
+
+<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
