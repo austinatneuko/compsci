@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>P1.1 Specify, build, and defend P1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/p1.html">P1 Intermediate product (project)</a> · Phase 3, Professional web systems</p>
+<p class="kicker">P1.1 · 40 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Specify, build, and defend P1</h1>
+<p class="lede">P1 Intermediate product (project)</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Specify a full-stack product that is not a todo clone or a tutorial.</li><li>Ship Postgres, API, auth, tests, CI, deploy, README.</li><li>Take a review as a hiring manager and as a senior engineer, and fix what is rejected.</li><li>Prepare the oral: architecture and one tradeoff you would reverse.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>P1 is required for Gate A. It is a product you specified: a real database, a real API, real auth, tests, CI, a URL, a README a stranger can run. Not a todo list. Not the blog clone with my name swapped in. I approve the spec or you do not start. I will not let you hide a missing test behind a pretty page. I will not let you hide a missing page behind a green pipeline. Both have to be true.</p><p>I review twice in spirit. Would I hire someone who shipped this as evidence, and would I let this into a codebase I own. Those are different bars. The first cares that it works and that you can talk. The second cares about seams, authz, tests, and honesty. You fix what I reject. The hiring-manager review asks whether this is evidence. The senior review asks whether I would live with the seams. You will get both sets of notes. You will change the work, not the notes.</p><p>Scope is the skill. A thin vertical slice that is true beats a forest of half-pages. If you cannot operate it, it is not a product, it is a demo. Scope is a thin vertical slice that is true. A forest of half-pages is a demo.</p><p>The gate oral is: explain P1 and one tradeoff you would reverse. Start that paragraph when the first design decision is made, not the night before the oral. The oral paragraph is a living document.</p><p>Spec first. My yes. Then build in the open, PRs or regular review. Stranger README. I create an account on the URL. No AI-generated product. Assisted work only where the skill is already Competent and I said so. Regular review, not a dump at the end.</p><p>P1 is required for the gate because a junior loop asks whether you have shipped. Not a todo clone. Not a tutorial. A product you specified: Postgres, API, auth, tests, CI, a URL, a README a stranger can run. I review as a hiring manager and as a senior engineer. Those bars differ. You fix what I reject. The oral is this system plus one tradeoff you would reverse. Start that paragraph when you make the first design decision, not the night before the exam.</p><p>Scope is a thin vertical slice that is true. A forest of half-pages is a demo. I approve the spec or you do not start. Regular review, not a dump at the end. The stranger README is part of the artifact. Assisted work only where the skill is already Competent and I said so. The oral paragraph is a living document.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Spec first. My yes. Then build in the open, PRs or regular review.</li><li>Stranger README. I create an account on the URL.</li><li>No AI-generated product. Assisted work only where the skill is already Competent and I said so.</li></ol></div>
+
+<section class="work-log is-locked" id="work-log" data-lesson="p1-1" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-p1-1">Your answer</label>
+<textarea id="work-body-p1-1" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Your C6 through C8 artifacts <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li><li><div class='ttl'>Review notes I write <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>I would let a stranger use it. Pipeline green. You can defend one reversed tradeoff.</p></div>
+<nav class="pager">
+<a href="../lessons/c8-8.html">Previous: C8.8 OWASP-lite for your app</a>
+<a href="../lessons/c5a-1.html">Next: C5-lite.1 Asymptotics you will say out loud</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
+</body>
+</html>

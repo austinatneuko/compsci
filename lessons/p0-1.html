@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>P0.1 Specify and build a command-line tool</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/p0.html">P0 Command-line tool (project)</a> · Phase 1, Foundations</p>
+<p class="kicker">P0.1 · 15 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Specify and build a command-line tool</h1>
+<p class="lede">P0 Command-line tool (project)</p>
+<div class='banner'><strong>Locked.</strong> Because C0 is not mastered and C1 is not far enough along to specify a real tool. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Write a spec for a CLI tool that is not a tutorial clone.</li><li>Implement it in Python with tests and a README a stranger can run.</li><li>Use Git as the history of the work, not as a last-night dump.</li><li>Survive a code review and change what is rejected.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>P0 is the first thing in this program that is supposed to exist for a stranger. C1 proved you can write Python. P0 asks whether you can specify a job, cut it to a size you can finish, and leave a trail. The failure mode I see most is a weather-app clone from a blog with my name in the README. I will reject that on the spec, before you write a line of the body.</p><p>A command-line tool has a contract you can say out loud. It reads arguments or stdin. It writes stdout or files. It exits nonzero when it fails. It does not require a GUI. Pick a job you actually have. Rename a pile of files. Summarize a CSV you care about. Deal a practice quiz from a question file. Check that a directory tree matches a checklist. Small and real beats large and fake. If you pick a problem you do not care about, the spec will be fog and the tool will be a clone with the serial numbers filed off.</p><p>A spec I will accept names inputs, outputs, errors you will handle, errors you will refuse, and how I run it. That paragraph is a spec. A bullet list of verbs is a wish. I will reject wishes. Example of a decision: the tool reads a directory of UTF-8 notes and prints a count per tag, tags are hash-leading words, unknown flags are errors, and I will not crawl the network. After I accept, the implementation is C1.9 at project size. Parse at the edge. Decide in functions I can test. Print in main.</p><p>Git commits as you go. If the story of the work is one commit titled final, we redo the history even if the binary behaves. That is not busywork. That is how I know the next project will not be a dump. A README is a contract with a future stranger, often you in a month. One copy-paste command that runs the tests. If that command does not exist, the README is not done.</p><p>I review like a demanding mentor. What is wrong, why it matters, what a stronger engineer would have considered. You correct it with commits, not with a debate about taste unless I was factually wrong. Completing a first draft is not the exit. The loop is the work.</p><p>No AI on the first draft of the spec. If I later mark a pass AI-open, you still read every line. I will clone the repo and run it from a clean directory. I will try a wrong flag. I will read the log. A tool you specified is also a rehearsal for every later review.</p><p>P0 exists because C1 can produce a person who writes functions and still cannot ship a tool a stranger will run. A spec is a decision about who the user is and what failure looks like. A README is a contract with a future stranger, often you in a month. Git is the history of those decisions, not a zip file at the end. Review is how I refuse a tutorial clone before you spend a weekend on it. If you pick a problem you do not care about, the spec will be fog and the tool will be a clone with the serial numbers filed off. Pick a job you have. Cut it until a week of nights can finish it. Then we review.</p><p>The failure mode I see most is a spec that lists features instead of decisions. A decision looks like: the tool reads a directory of UTF-8 notes and prints a count per tag, tags are hash-leading words, unknown flags are errors, and I will not crawl the network. That paragraph is a spec. A bullet list of verbs is a wish. I will reject wishes. After I accept, the implementation is C1.9 at project size: parse at the edge, decide in functions I can test, print in main. If you cannot run the tests with one command, the README is not done.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Write the spec in CompSci chat. Do not start the body until I say the spec is honest and not a clone.</li><li>Implement closed-resource. Tests. README. I clone and run.</li><li>Respond to review with commits, not with debate about taste unless I was factually wrong.</li><li>No AI on the first draft of the spec. If I later mark a pass AI-open, you still read every line.</li></ol></div>
+
+<section class="work-log is-locked" id="work-log" data-lesson="p0-1" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-p0-1">Your answer</label>
+<textarea id="work-body-p0-1" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Python argparse docs, assigned pages after spec approval <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li><li><div class='ttl'>Your C1 notes and C0 Git notes <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>A stranger can run the tool from the README. Tests pass. Review comments are addressed. I say it is a tool, not a tutorial souvenir.</p></div>
+<nav class="pager">
+<a href="../lessons/c1-10.html">Previous: C1.10 Small programs</a>
+<a href="../lessons/c2-1.html">Next: C2-lite.1 Cost model and arrays</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
+</body>
+</html>
