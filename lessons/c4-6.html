@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C4.6 Debugging method</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c4.html">C4 Software Construction</a> · Phase 2, Structures and construction</p>
+<p class="kicker">C4.6 · 80 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Debugging method</h1>
+<p class="lede">C4 Software Construction</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Debug with a hypothesis: what would be true if I were right, how do I check.</li><li>Use a stack trace, a repro, and a bisection of the search space.</li><li>Stop changing three things at once.</li><li>Write down the path so the next bug is cheaper.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>Debugging is not hoping. You reproduce, you form a hypothesis, you run the smallest check that could kill the hypothesis, you update. Print is legal. A debugger is legal. Changing a line at random while a model rewrites the file is not a method.</p><p>The scientific loop is the same as C0.5, now on your code. It doesn't work is not a report. Given input X, I expected Y, I got Z, I think function f dropped the last item because the slice is off is a report. If you cannot reproduce, you do not have a bug you can fix. You have a story.</p><p>I will give you broken programs. Some fail tests. Some fail only on an edge. Some fail because the environment is wrong, PATH or cwd. You will write the hypothesis first in chat, then the check. Lucky fixes you cannot explain get reverted and redone. Changing three things at once is how you lose the lesson and keep the bug.</p><p>The debug note is part of the work: repro, hypotheses, checks, conclusion. AI is off on the first debugging assignments. A model will shotgun patches. Shotgun patches teach you nothing and sometimes introduce a second bug you then owe the model. The gate debugging exam is this method under a clock.</p><p>Do not reinstall Python. Do not ask a model. Three broken programs from me. Hypothesis first, then fix. Keep a debug note for one of them. If the note is I fixed it, we redo the note, not only the program.</p><p>C4 is the course where other people have to live with your code. Specs, ADTs, tests, PR-quality Git, review, a debugging method, API-shaped errors, a little FP taste, and AI evaluation as law. MIT 6.1020 is the gold statement of the ideas; we do the work in Python. Google engineering practices are a baseline, not scripture. Dual-track work starts here: closed first, then catch the model. If you treat this course as a checklist of tools, you will still write a 400-line main. If you treat it as contracts plus history plus review, P1 becomes possible.</p><p>The debug note is part of the work: repro, hypotheses, checks, conclusion. Lucky fixes get reverted. Changing three things at once is how you lose the lesson and keep the bug. AI is off on the first assignments because a model will shotgun a patch and you will not know which line mattered. The gate debugging exam is this method under a clock.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Three broken programs from me. Hypothesis first, then fix. Closed-resource.</li><li>Keep a debug note for one of them: repro, hypotheses, checks, conclusion.</li><li>Do not ask a model. Do not reinstall Python.</li><li>Debugging exam later in C4 and again at the gate.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Missing Semester debugging material as assigned <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li><li><div class='ttl'>My broken-program set <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>Given a bug, you reproduce, hypothesize, check, and fix. You can explain the cause. Method, not luck.</p></div>
+<nav class="pager">
+<a href="../lessons/c4-5.html">Previous: C4.5 Code review (Google eng-practices)</a>
+<a href="../lessons/c4-7.html">Next: C4.7 Errors and API shape</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

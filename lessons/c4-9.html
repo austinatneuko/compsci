@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C4.9 Evaluating AI output</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c4.html">C4 Software Construction</a> · Phase 2, Structures and construction</p>
+<p class="kicker">C4.9 · 80 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Evaluating AI output</h1>
+<p class="lede">C4 Software Construction</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Treat AI output as untrusted work by a fast junior who does not care about your spec.</li><li>Catch a wrong API, a missing edge, and a vacuous test in model output.</li><li>Keep Independent and Assisted as separate scores.</li><li>Never submit unread output.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>C0.6 was the rules. C4 is where they become law. After a skill is Competent independently, some assignments become AI-open. I give you a prompt, you use a model, you submit a review of the output plus your corrected version. The grade is the catch, not the paste. Unread output is a fail. Fluent output is not a signal of truth.</p><p>Typical failures you will learn to see. Functions that do not exist. Off-by-one in slices. Tests that assert the implementation. <code>except Exception: pass</code>. Types that lie. Comments that describe a different program. Secret-shaped strings treated as normal config. Fluency is the trap. You will catch a missing edge, an invented function, and a vacuous test on purpose.</p><p>Closed-resource exams stay closed. Gate A's dual-track exam is this skill under a clock. I hand you AI-generated code with bugs, you catch them. We practice that here, not for the first time at the gate.</p><p>I will not argue about brands. Cursor, Copilot, Claude. The switch and the judgment are the course. If you cannot do the task without the model, you are not ready for the AI-open version. We go back. Independent remains the gate score. Assisted is a second number that still has to show judgment.</p><p>Dual-track assignment: closed solution first, then AI-open on a cousin problem. You must catch at least two real issues in the model's answer. Practice packet of buggy AI output I wrote, or generated and seeded. Review like a PR. Do not let a model write the review of itself. Restate Independent vs Assisted in chat. Gate A uses Independent.</p><p>C4 is the course where other people have to live with your code. Specs, ADTs, tests, PR-quality Git, review, a debugging method, API-shaped errors, a little FP taste, and AI evaluation as law. MIT 6.1020 is the gold statement of the ideas; we do the work in Python. Google engineering practices are a baseline, not scripture. Dual-track work starts here: closed first, then catch the model. If you treat this course as a checklist of tools, you will still write a 400-line main. If you treat it as contracts plus history plus review, P1 becomes possible.</p><p>Unread output is a fail. Fluent output is not a signal of truth. You will catch a missing edge, an invented function, and a vacuous test on purpose. Independent remains the gate score. Assisted is a second number that still has to show judgment. If you cannot do the task closed, you are not ready for the open version. We go back.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Dual-track assignment: closed solution first, then AI-open on a cousin problem. You must catch at least two real issues in the model's answer.</li><li>Practice packet of buggy AI output I wrote or generated and seeded. Review like a PR.</li><li>Restate Independent vs Assisted in chat. Gate A uses Independent.</li><li>Do not let a model write the review of itself.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>C0.6 rules, this site <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li><li><div class='ttl'>Google eng-practices, as they apply to generated code, assigned notes <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You catch bad model output on purpose. Unread output is a fail. Independent remains the gate score.</p></div>
+<nav class="pager">
+<a href="../lessons/c4-8.html">Previous: C4.8 Immutability and HOFs</a>
+<a href="../lessons/c6-1.html">Next: C6.1 HTTP and the web as a system</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

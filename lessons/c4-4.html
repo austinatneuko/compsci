@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C4.4 Git II (branch, rebase vs merge, conflict, bisect)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c4.html">C4 Software Construction</a> · Phase 2, Structures and construction</p>
+<p class="kicker">C4.4 · 80 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Git II (branch, rebase vs merge, conflict, bisect)</h1>
+<p class="lede">C4 Software Construction</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Branch for a change. Write commits I would read on a team.</li><li>Explain merge vs rebase as history shapes, and when I want which.</li><li>Resolve a conflict on purpose without panic.</li><li>Use bisect as a search over history, not as folklore.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>C0.4 was local history. C4 is PR-quality Git. You work on a branch named for the change. Commits are a story a reviewer can skim. <code>main</code> is not your scratchpad. You will open pull requests against a course repo I maintain. The website is GitHub or equivalent. The skill is the history.</p><p>PR-quality Git is a story a reviewer can skim. Branch, commits that say why, a conflict you resolve without deleting the other side, bisect when last month is the only clue. Merge preserves the exact graph of what happened. Rebase replays your commits on a new base and rewrites history. Fine for your unpushed branch. Hostile on a shared branch. I will tell you which I want. I always rebase is not a personality I need. I understand both is.</p><p>A conflict is two edits to the same region. Git dumps both into the file and waits. You edit, mark it resolved, continue. You do not delete the other person's work because it is inconvenient. You do not commit conflict markers. I will create a conflict for you on purpose.</p><p><code>git bisect</code> is binary search on commits. This one is bad, that one is good, Git picks the middle, you test. When a bug appeared sometime last month, bisect is the method. Random checkouts are not.</p><p>Missing Semester lectures 6, 7, and 9 live here as assigned minutes and exercises, not as a binge. No force-push on shared branches. No AI writing your commit messages as novels. If a skill from C2 is shaky, we pause. Weakness in an earlier concept pauses forward motion.</p><p>C4 is the course where other people have to live with your code. Specs, ADTs, tests, PR-quality Git, review, a debugging method, API-shaped errors, a little FP taste, and AI evaluation as law. MIT 6.1020 is the gold statement of the ideas; we do the work in Python. Google engineering practices are a baseline, not scripture. Dual-track work starts here: closed first, then catch the model. If you treat this course as a checklist of tools, you will still write a 400-line main. If you treat it as contracts plus history plus review, P1 becomes possible.</p><p>PR-quality Git is a story a reviewer can skim. Branch, commits that say why, a conflict you resolve without deleting the other side, bisect when last month is the only clue. Rebase is a history rewrite. Use it on your unpushed work if I ask, not on a shared branch as a personality. Missing Semester 6, 7, and 9 live here as assigned minutes, not as a binge.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Open a PR on the course repo. I review it. You address comments with commits or a follow-up PR as I say.</li><li>Resolve a conflict I create. Closed-resource.</li><li>Bisect a repo I broke. Find the commit. Name it in chat.</li><li>No force-push on shared branches. No AI writing your commit messages as novels.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Missing Semester 2026 lectures 6, 7, 9, assigned minutes <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li><li><div class='ttl'>Git official docs: branch, rebase, merge, bisect, assigned <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>PR-quality branch, conflict, bisect. I would accept the history on a real team.</p></div>
+<nav class="pager">
+<a href="../lessons/c4-3.html">Previous: C4.3 Testing I</a>
+<a href="../lessons/c4-5.html">Next: C4.5 Code review (Google eng-practices)</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

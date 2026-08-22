@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C4.8 Immutability and HOFs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c4.html">C4 Software Construction</a> · Phase 2, Structures and construction</p>
+<p class="kicker">C4.8 · 80 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Immutability and HOFs</h1>
+<p class="lede">C4 Software Construction</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Use immutability as a default for values that do not need to change.</li><li>Write a higher-order function: a function that takes or returns a function.</li><li>Map and filter as ideas, not as a personality that bans loops.</li><li>Keep this in Python. We are not opening a second language.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>Functional programming as a semester is excluded from this program on purpose. The ideas that pay rent are not. Immutable values are easier to reason about. If the list cannot change, the alias bug from C1.4 dies. Prefer returning a new collection when the cost is fine. Mutate when the cost or the API demands it, and then say so. Immutability is a default for values that do not need to change, not a ban on lists.</p><p>A higher-order function takes a function or returns one. <code>sorted(xs, key=...)</code> is one you already used. You will write <code>once(fn)</code> or a simple <code>compose</code>, and a map/filter that you could also have written as a loop. If you cannot expand the comprehension or the <code>map</code> to a loop, write the loop. Cleverness is not the exit. Higher-order functions are how sorted and a test hook work.</p><p>Closures capture names. That is useful and sharp. A default-argument-in-a-loop bug will show up. We will poke it until you fear it. Lambdas stay one expression. If you need statements, <code>def</code>.</p><p>This module exists so C7 TypeScript and C10 concurrency do not introduce don't share mutable state as a foreign religion. You will have already practiced the taste. We are not opening a second language. We are practicing a taste C7 and C10 will assume.</p><p>Rewrite a mutating function to return a new value. Tests still express the spec. Closed-resource: expand a map/filter to a loop on paper. If the paper is I just know, we do another one.</p><p>C4 is the course where other people have to live with your code. Specs, ADTs, tests, PR-quality Git, review, a debugging method, API-shaped errors, a little FP taste, and AI evaluation as law. MIT 6.1020 is the gold statement of the ideas; we do the work in Python. Google engineering practices are a baseline, not scripture. Dual-track work starts here: closed first, then catch the model. If you treat this course as a checklist of tools, you will still write a 400-line main. If you treat it as contracts plus history plus review, P1 becomes possible.</p><p>Immutability is a default for values that do not need to change, not a ban on lists. Higher-order functions are how sorted and a test hook work. If you cannot expand a map to a loop, write the loop. We are not opening a second language. We are practicing a taste C7 and C10 will assume.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Rewrite a mutating function to return a new value. Tests still express the spec.</li><li>Write a higher-order helper and a test that passes a function you defined.</li><li>Closed-resource: expand a map/filter to a loop on paper.</li><li>No new language. No AI.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>MIT 6.1020, FP ideas as assigned, Python <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You can choose immutability on purpose and write a small HOF you can expand to a loop.</p></div>
+<nav class="pager">
+<a href="../lessons/c4-7.html">Previous: C4.7 Errors and API shape</a>
+<a href="../lessons/c4-9.html">Next: C4.9 Evaluating AI output</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
