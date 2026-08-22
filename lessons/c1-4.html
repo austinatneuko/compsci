@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1c1610">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>C1.4 Sequences and dictionaries</title>
+<title>C1.4 Exceptions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/app.css">
+<link rel="stylesheet" href="../assets/work.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -25,30 +26,24 @@
 <div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
 </aside>
 <main class="main" id="main"><div class="inner">
-
-<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c1.html">C1 Programming Fundamentals in Python</a> · Phase 1, Foundations</p>
-<p class="kicker">C1.4 · 100 h course · pre-gate <span class="pill locked">Locked</span></p>
-<h1>Sequences and dictionaries</h1>
-<p class="lede">C1 Programming Fundamentals in Python</p>
-<div class='banner'><strong>Locked.</strong> Because C0 module 3, editor and terminal workflow, is not mastered yet. C1 can start in parallel only after that. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
-
-<h2>Objectives</h2>
-<ul class='obj'><li>Build, index, slice, and walk lists. Know that lists are mutable sequences.</li><li>Use dictionaries as maps from keys to values, not as lists with names.</li><li>Choose a list or a dict for a small job and say why.</li><li>Copy versus alias. <code>b = a</code> is not a second list.</li><li>Avoid the off-by-one errors you can catch with a trace.</li></ul>
-<h2>Teaching</h2>
-<div class="prose"><p>A list is an ordered, mutable sequence of objects. Those objects can have different types, but a list that means one thing should usually hold one kind of thing. You index from zero. You slice with <code>a[i:j]</code>, which is a new list of the half-open interval. Include i, exclude j. That convention is not harassment. It makes <code>a[:n]</code> and <code>a[n:]</code> a clean split, and <code>len(a[i:j])</code> equal <code>j - i</code> when the indexes are in range. Learn the half-open interval once. It comes back in every language you will use.</p><p>Mutation methods, <code>append</code>, <code>extend</code>, <code>insert</code>, <code>pop</code>, <code>sort</code>, change the list object. The functions <code>sorted</code> and slicing produce new lists. If you write <code>xs = xs.append(3)</code> you just bound <code>xs</code> to <code>None</code>, because <code>append</code> returns <code>None</code>. That bug will visit you. I am naming it now so you recognize the house.</p><p>A dictionary is a map. Keys must be hashable. Ints, strings, tuples of hashables. Not lists. Values can be anything. You look up by key, not by position. <code>d[k]</code> raises if k is missing. <code>d.get(k)</code> returns <code>None</code> or a default. Membership <code>k in d</code> is the normal check. Walking <code>for k in d</code> walks keys. Walk items with <code>for k, v in d.items()</code> when you need both. Using a dict as a clumsy list, keys 0, 1, 2, is a smell unless the keys are actually identities that happen to be numbers.</p><p>Alias versus copy is the C1.1 picture with teeth. <code>b = a</code> gives you two names for one list. <code>b = a[:]</code> or <code>list(a)</code> gives you a new list with the same items, shallow. Nested lists are a later knife. If you nest, say so and copy on purpose. I will put an alias bug on a quiz.</p><p>When do you pick which? Ordered collection you will walk in order, maybe duplicate, maybe sort, list. Lookup by an identity you already have, id, word, filename, dict. A set, unique membership, we will use when the job is have I seen this. Do not use a list and <code>if x not in seen</code> on large data as a lifestyle. For C1 sizes it runs, and I still want you to know it is the wrong structure later. C2 will make you implement these. Today you use them honestly.</p><p>Comprehensions are optional sugar this week. If you write one, you must be able to expand it to a loop. If you cannot, write the loop. Clever is not a grading category.</p><p>Strings are sequences too, but immutable. They wait in C1.5. Tuples are immutable sequences. Use them as records and as dict keys, not as lists I forgot to mutate.</p></div>
-<h2>Work</h2>
-<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
-<div class="work"><ol><li>Write <code>mean(xs)</code> that returns the arithmetic mean of a non-empty list of numbers. Raise a ValueError on empty. Return, do not print.</li><li>Write a function that takes a list of words and returns a dict of word to count. Test it on a short list you can count by hand.</li><li>On paper, <code>a = [1, 2, 3]</code>, <code>b = a</code>, <code>c = a[:]</code>, <code>b.append(4)</code>. What are a, b, c? Then run.</li><li>Given a dict of name to score, write a function that returns the name with the highest score. Define what you do on a tie and on empty, in the docstring.</li><li>Closed-resource. No AI. Homework program 2 lives here.</li></ol></div>
-<h2>Assigned reading</h2>
-<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
-<ul class='reading locked-list'><li><div class='ttl'>Official tutorial, lists, dicts, tuples, selected <span class="pill locked">Locked</span></div><p class='note'>Skip classes.</p></li><li><div class='ttl'>Think Python, lists and dictionaries <span class="pill locked">Locked</span></div><p class='note'>Assigned pages.</p></li><li><div class='ttl'>Selected MIT 6.1000 or CS50P lecture on collections <span class="pill locked">Locked</span></div><p class='note'>Minutes in chat.</p></li></ul>
-<h2>Mastery</h2>
-<div class="paper"><p>You pick list vs dict with a reason. You can draw alias vs copy. You write small functions that return collections. Independent. Quiz plus homework.</p></div>
-<nav class="pager">
-<a href="../lessons/c1-3.html">Previous: C1.3 Functions and scope</a>
-<a href="../lessons/c1-5.html">Next: C1.5 Strings and files</a>
-</nav>
-
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c1.html">C1 Programming Fundamentals in Python</a> · Phase 1, Foundations</p><header class="chapter-head"><p class="chapter-meta">C1 · Harvard CS50P · Exceptions</p><h1>Exceptions</h1><p class="time-est">180 minutes · <span class="pill locked">Locked</span></p></header><p class="source-line">Official: Harvard CS50P, week 3 · <a href="https://cs50.harvard.edu/python/">course home</a> · <a href="https://cs50.harvard.edu/python/notes/3/">notes</a></p><div class="prose wrap-brief"><p>Watch week 3. Their problem set on their site.</p><p>I grade how you handle a bad input, not how pretty the catch looks.</p></div><div class='banner'><strong>Locked.</strong> C1 starts after C0.3 mastered. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div><section class="watch" id="watch"><p class="section-label">Watch</p><p class="watch-title">CS50P week 3: Exceptions</p><div class="video-wrap"><iframe src="https://www.youtube.com/embed/LW7g1169v7w" title="CS50P week 3: Exceptions" allowfullscreen></iframe></div></section><section class="read" id="read"><p class="section-label">Read</p><p class="watch-notes"><a href="https://cs50.harvard.edu/python/notes/3/">CS50P week 3 notes</a></p><p class="lock-note">URL is here so the map is complete. Materials stay locked. Do not start until this lesson is current.</p></section><section class="implement" id="do"><p class="section-label">Do on their site</p><p class="lock-note">Listed so you can see the work. Not assigned. Do not start. No solutions on this site.</p><ol class="do-official"><li><a href="https://cs50.harvard.edu/python/psets/3/fuel/">Fuel Gauge</a></li><li><a href="https://cs50.harvard.edu/python/psets/3/taqueria/">Felipe's Taqueria</a></li><li><a href="https://cs50.harvard.edu/python/psets/3/grocery/">Grocery List</a></li><li><a href="https://cs50.harvard.edu/python/psets/3/outdated/">Outdated</a></li></ol></section><section class="check" id="knowledge-check"><p class="section-label">CompSci check</p><p class="lock-note">Answer in your own words. Answers are not on this page.</p><details class='think'><summary>1. What is an exception, in your own words?</summary><p>Think it through. Write your answer in your own words. I am not printing an answer here.</p></details><details class='think'><summary>2. When is <code>try</code> honest, and when is it hiding a bug?</summary><p>Think it through. Write your answer in your own words. I am not printing an answer here.</p></details><details class='think'><summary>3. What does <code>raise</code> do that <code>print</code> does not?</summary><p>Think it through. Write your answer in your own words. I am not printing an answer here.</p></details></section>
+<section class="work-log is-locked" id="work-log" data-lesson="c1-4" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-c1-4">Your answer</label>
+<textarea id="work-body-c1-4" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+<section class="mastery-sec" id="mastery"><p class="section-label">Mastery</p><div class="paper"><p>You can catch a real error, leave a fake one alone, and say what failed. A bare <code>except:</code> fails this lesson.</p></div></section><nav class="pager"><a href="../lessons/c1-3.html">Previous: C1.3 Loops</a><a href="../lessons/c1-5.html">Next: C1.5 Libraries</a></nav>
 <p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
 </div></main>
 </div>
@@ -59,5 +54,7 @@
 <a class="" href="../about.html">About</a>
 </nav>
 <script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
 </body>
 </html>
