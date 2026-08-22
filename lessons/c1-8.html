@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C1.8 Recursion I</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c1.html">C1 Programming Fundamentals (Python)</a> · Phase 1 — Foundations</p>
+<p class="kicker">C1.8 · 100 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Recursion I</h1>
+<p class="lede">C1 Programming Fundamentals (Python)</p>
+<div class='banner'><strong>Locked.</strong> Because C0 module 3 (editor and terminal workflow) is not mastered yet. C1 can start in parallel only after that. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Explain recursion as a function calling itself on a smaller instance of the same job.</li><li>Write a base case that does not call, and a recursive case that moves toward it.</li><li>Trace a small recursion on paper (factorial, a list sum, a simple tree walk preview).</li><li>Recognize an infinite recursion as a missing or unreachable base case.</li><li>Know when a loop is the function you actually want.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>Recursion is not a personality. It is a way to define a function by referring to a smaller version of the same problem. The two pieces you must always be able to point at: a base case that returns without calling itself, and a recursive case that calls on something closer to the base. If either is missing, you get <code>RecursionError</code> or a wrong answer.</p><p>The classic examples are small on purpose. Factorial. The sum of a list as “first plus sum of rest.” A countdown. I do not care if you would have written a loop. I care that you can draw the stack: each call has its own <code>n</code>, its own place to return to. That stack picture is the same picture C9 will use for C frames. You are paying for that later course now, cheaply.</p><p>Trust the recursive call. Beginners reimplement the whole problem inside the recursive case, or they adjust the answer after the call in a way that shows they did not believe it. If <code>sum_rest</code> is correct by induction (C3 will name that), you add <code>xs[0]</code> and you stop fussing. If you cannot yet feel that, trace two or three frames until you do.</p><p>Recursion that walks a nested structure — a list of lists, a directory tree, a JSON value — is where the idea earns its keep. A loop wants a flat sequence. A recursive function wants a shape that contains shapes like itself. We will do one nested-list walk. We will not do fancy tree homework until C2 gives you trees.</p><p>When not to recurse in this course: replacing a simple <code>for</code> over a flat list, “to be clever,” or on an input so large you will hit the recursion limit (Python’s default is on the order of a thousand frames). Tail-call elimination is not a thing you should expect in Python. A loop is honest.</p><p>One more picture: recursion is a stack of unfinished work, the same stack you will draw in C9. If you cannot name what is waiting to finish after the recursive call returns, you do not understand the function yet. Write that waiting work as one expression, not as a second algorithm hiding after the call.</p><p>Debugging: print the arguments at the top of the function if you must, then take the prints out. Better: trace on paper for n=3. Better still: a test for the base case and a test for n=3 that you computed by hand.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Write <code>fact(n)</code> for n &gt;= 0. Raise on negative. Tests for 0, 1, 5. No <code>math.factorial</code> in the body.</li><li>Write <code>sum_list(xs)</code> recursively (empty list is 0). Then write the loop version. Keep the loop in production-shaped code; keep the recursive one as the lesson artifact.</li><li>On paper, trace <code>fact(4)</code> as a stack of frames. Bring the paper to chat.</li><li>Write a function that returns the maximum number inside a nested list of numbers (<code>[1, [2, 3], 0]</code>). Recurse when you see a list. This is the interesting problem.</li><li>Closed-resource. No AI. Do not paste a memoized Fibonacci essay. We are not there.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Think Python — recursion (assigned) <span class="pill locked">Locked</span></div><p class='note'>Skip the parts that turn into fractals unless I assign them.</p></li><li><div class='ttl'>Selected MIT 6.1000 lecture on recursion <span class="pill locked">Locked</span></div><p class='note'>Minutes in chat.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You can write a base case and a recursive case, trace a small stack on paper, and say when a loop is better. Independent. Paper trace is required.</p></div>
+<nav class="pager">
+<a href="../lessons/c1-7.html">Previous: C1.7 Testing a function</a>
+<a href="../lessons/c1-9.html">Next: C1.9 Decomposition</a>
+</nav>
+
+<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
