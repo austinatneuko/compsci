@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C1.2 Control flow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c1.html">C1 Programming Fundamentals (Python)</a> · Phase 1 — Foundations</p>
+<p class="kicker">C1.2 · 100 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Control flow</h1>
+<p class="lede">C1 Programming Fundamentals (Python)</p>
+<div class='banner'><strong>Locked.</strong> Because C0 module 3 (editor and terminal workflow) is not mastered yet. C1 can start in parallel only after that. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Write <code>if</code> / <code>elif</code> / <code>else</code> as a choice among paths, not as decoration.</li><li>Trace a <code>while</code> and a <code>for</code> on paper, including the loop variable.</li><li>Know that <code>for x in s</code> walks items, not indexes, unless you asked for indexes.</li><li>Stop a loop on purpose (<code>break</code>) and skip an iteration (<code>continue</code>) only when you can say why.</li><li>Avoid the infinite loop you did not mean, and kill the one you did.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>A program that only runs top to bottom is a grocery list. Real programs choose and repeat. Control flow is the name for those two ideas. Nothing mystical: at each <code>if</code>, the machine evaluates a boolean and takes one path. At each loop, it comes back until a condition fails or the collection is exhausted.</p><p>Booleans are values, not decorations. <code>==</code> asks whether two things are equal; <code>=</code> binds a name. Mixing them is the first classic bug. <code>and</code>, <code>or</code>, and <code>not</code> have precedence; when you are unsure, parenthesize. Compare with the types you meant: <code>&quot;0&quot;</code> is not <code>0</code>, and <code>&quot;&quot;</code> is not <code>None</code>. Python has truthiness — empty containers and zero are false in a boolean context — and I want you to know that exists so it does not surprise you. I also want you to write explicit comparisons when the explicitness is the point of the code.</p><p><code>if</code> / <code>elif</code> / <code>else</code> is one chain. The first true condition wins. An <code>if</code> stacked under another <code>if</code> is a nest, not a chain, and it means something else. I will make you draw the paths. If you cannot draw them, you cannot test them.</p><p><code>while</code> is “as long as this is true, do this body.” You are responsible for the thing that becomes false. If the condition never changes, you have an infinite loop. In a terminal, Ctrl-C is your friend; force-killing the window is a habit we will break. <code>for</code> is “for each item in this iterable, bind the loop variable and run the body.” The loop variable is a real name. After the loop it still refers to the last item (if there was one). People who reuse it casually write bugs that only show up on the last element.</p><p>You do not need <code>range</code> to walk a list of items. You need <code>range</code> when you need numbers, or indexes. <code>for i in range(len(xs))</code> is a smell when <code>for x in xs</code> was the job. We will use indexes when the algorithm needs a neighbor (<code>xs[i-1]</code>) or a swap. Using them by default is how people import C into Python and then complain that Python is hard.</p><p><code>break</code> leaves the loop. <code>continue</code> skips the rest of this iteration. Both are legal. Both are easy to hide a second algorithm inside. If I cannot see the exit condition at the top of the loop, I will ask you to rewrite.</p><p>Trace on paper. I am serious. Take a ten-line fragment, make a table of names, update the table each line. This is the skill the C1 exam uses when I hand you someone else’s 50-line function. If you only ever run code and stare at prints, you cannot debug a line that did not print.</p><p>Closed-resource drills this week. The midterm will not let you ask a model whether the loop runs four times or five.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>On paper: trace <code>n = 5</code> / <code>while n &gt; 0:</code> / <code>n = n - 2</code> / print n. How many prints? What is n after? Then run it.</li><li>Write a program that reads a small list of numbers you typed into the file and prints how many are positive, negative, and zero. Use a for-loop over items, not indexes.</li><li>Write the same count with a while-loop and an index. Say in a comment which version you would keep and why.</li><li>Produce an infinite loop on purpose in a disposable file. Stop it from the terminal. Write the kill key in chat so I know you have it.</li><li>Closed-resource. No AI. Quiz at the end of the module.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Think Python — conditionals and iteration (assigned sections) <span class="pill locked">Locked</span></div><p class='note'>Pages in chat.</p></li><li><div class='ttl'>Official tutorial — control flow tools (selected) <span class="pill locked">Locked</span></div><p class='note'>Skip exceptions until C1.6.</p></li><li><div class='ttl'>Selected MIT 6.1000 / CS50P lecture on branches and loops <span class="pill locked">Locked</span></div><p class='note'>Minutes marked in chat.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You can trace a loop on paper and write a branch whose paths you can draw. You can stop a runaway program. Independent. Demonstration in chat and on a weekly quiz.</p></div>
+<nav class="pager">
+<a href="../lessons/c1-1.html">Previous: C1.1 Values and names</a>
+<a href="../lessons/c1-3.html">Next: C1.3 Functions and scope</a>
+</nav>
+
+<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

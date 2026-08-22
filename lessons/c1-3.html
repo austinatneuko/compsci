@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C1.3 Functions and scope</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c1.html">C1 Programming Fundamentals (Python)</a> · Phase 1 — Foundations</p>
+<p class="kicker">C1.3 · 100 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Functions and scope</h1>
+<p class="lede">C1 Programming Fundamentals (Python)</p>
+<div class='banner'><strong>Locked.</strong> Because C0 module 3 (editor and terminal workflow) is not mastered yet. C1 can start in parallel only after that. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Write a function that takes arguments and returns a value — not one that only prints.</li><li>Explain scope: a name inside the function is not the name outside, even if it looks the same.</li><li>Say what happens to objects passed in: rebinding a parameter is local; mutating a mutable object is not.</li><li>Read a traceback that names your function and jump to that line.</li><li>Keep functions small enough to explain in one breath.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>A function is a named piece of computation with inputs and an output. You define it once. You call it whenever that computation is the next thing you need. If you are copying the same six lines, you are late to this lesson.</p><p><code>def</code> creates the function object and binds it to a name. The body does not run at definition time (except in the ways we will not use yet). A call <code>f(3)</code> binds the parameter names to the argument objects and runs the body. <code>return</code> hands a value back to the caller and stops the function. If you omit <code>return</code>, the function still returns: it returns <code>None</code>. That is why a function that only <code>print</code>s is a dead end for testing and composition. Print is a side effect for humans. Return is how programs talk to themselves.</p><p>Parameters are names local to the call. Assigning to a parameter rebinds that local name. It does not rebind the caller’s name. This is the same picture as C1.1, now inside a call. The twist: if the object is mutable and you mutate it (append to a list, set a key on a dict), the caller sees the mutation, because you did not rebind — you changed the object both names refer to. I will put this on the exam. Draw it.</p><p>Scope in C1 is local versus global. A name assigned in the function is local unless you do something exotic, which you will not. Reading a global is legal and usually a smell. Writing a global with <code>global</code> is a smell I will reject. Pass values in; return values out. Hidden state is how a 40-line homework becomes undebuggable.</p><p>Docstrings start now: one sentence under the <code>def</code> that says what the function returns given what. Not a novel. Not “this function does stuff.” We will turn these into contracts in C4. Today they are how you notice you cannot state the job.</p><p>Tracebacks are a gift. Read from the bottom: exception type and message. Then the last stack frame that is your file — file, line, function. Go there. Do not start at the top of a library path you did not write. Do not paste the traceback into a model in this course until I say AI-open.</p><p>Size. If I ask what the function does and you need a paragraph, it is two functions. Helpers are free. Nested helpers we will mostly avoid until you can explain closures, which is not this week.</p><p>Default arguments exist. Do not use a mutable default (<code>def f(xs=[])</code>). That bug is famous because it is real. If you need a default empty list, use <code>None</code> and create a list in the body. I will deduct for the famous bug after I have warned you, which is now.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Write <code>absolute(n)</code> that returns the absolute value without calling <code>abs</code>. Print is not allowed inside it. Write three calls that print the results from the outside.</li><li>On paper: <code>def f(x): x = x + 1; return x</code> then <code>n = 4; m = f(n)</code>. What are n and m? Then the list version: <code>def g(xs): xs.append(1)</code> called on <code>a = [0]</code>. What is a? Draw the names.</li><li>Trigger a TypeError or ValueError inside a two-function call chain. Read the traceback out loud in chat: which function, which line, which message.</li><li>Take a 20-line script from C1.2 and extract at least two functions that return values. Run it. Commit.</li><li>Closed-resource. No AI. No <code>global</code>.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Official Python tutorial — defining functions (selected) <span class="pill locked">Locked</span></div><p class='note'>Skip *args/**kwargs beyond a mention until you need them.</p></li><li><div class='ttl'>Think Python — functions and fruitful functions <span class="pill locked">Locked</span></div><p class='note'>Assigned chapters in chat.</p></li><li><div class='ttl'>Selected MIT 6.1000 / CS50P lecture on functions <span class="pill locked">Locked</span></div><p class='note'>Minutes in chat.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You write functions that return. You can draw parameter binding versus mutation. You can follow a traceback to your line. Independent. I will watch a live trace on paper.</p></div>
+<nav class="pager">
+<a href="../lessons/c1-2.html">Previous: C1.2 Control flow</a>
+<a href="../lessons/c1-4.html">Next: C1.4 Sequences and dictionaries</a>
+</nav>
+
+<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
