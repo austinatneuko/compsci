@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/app.css">
+<link rel="stylesheet" href="../assets/work.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -25,30 +26,56 @@
 <div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
 </aside>
 <main class="main" id="main"><div class="inner">
-
-<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c0.html">C0 Computing Environment</a> · Phase 1, Foundations</p>
-<p class="kicker">C0.4 · 30 h course · pre-gate <span class="pill locked">Locked</span></p>
-<h1>Git I</h1>
-<p class="lede">C0 Computing Environment</p>
-<div class='banner'><strong>Locked.</strong> Because C0.3 Editor and terminal workflow is not mastered yet. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
-
-<h2>Objectives</h2>
-<ul class='obj'><li>Explain Git as a history of snapshots you chose, not as the save button for GitHub.</li><li>Create a repository, see status, stage, commit, and read a log.</li><li>Make a branch, switch, and see a diff.</li><li>Say what is in the working tree versus the last commit.</li><li>Keep secrets out of the first commit.</li></ul>
-<h2>Teaching</h2>
-<div class="prose"><p>Git is not GitHub. GitHub is a company that hosts Git repositories and adds a website. Git is a program that records a history of your project as a sequence of commits you chose to make. If you only ever click upload to GitHub, you have a backup with extra steps. If you can commit locally, read a diff, and say what changed, you have an instrument.</p><p>A repository is a directory with a hidden <code>.git</code> that stores that history. <code>git init</code> creates it. After that, every file is in one of a few states you must be able to name. Untracked, Git does not know it. Modified, Git knew an older version. Staged, you have marked these exact changes for the next snapshot. Committed, in history. <code>git status</code> is the map. People who skip status live in surprise. I will ask for status before I look at anything else.</p><p>A commit is not a save. Your editor already saved the bytes to disk. A commit is a checkpoint you are willing to talk about later. These files, this message, this parent. Good messages say why, not update. We will practice messages I would accept on a team. wip is a note to yourself, not a history. If your log is initial commit plus a dump, we redo it. I have no patience for a story that starts and ends in the same sentence.</p><p>The staging area exists because not every dirty file belongs in the next checkpoint. You will dislike it for a week and then need it. Stage on purpose. <code>git add .</code> is a blunt instrument. Use it when you mean everything here is the point, not because it is shorter.</p><p>Branches are names for commits. The poetic explanation, parallel universes, is fine. The mechanical one is better. A branch is a movable pointer. You make a branch before you experiment so <code>main</code> stays a place you can return to. <code>git switch</code> moves you. <code>git diff</code> shows the work. Merge and rebase wait for C4. Today you need create, switch, commit, look around.</p><p>What Git is not. Undo as a lifestyle. A substitute for backups of your whole machine. A place to put passwords. <code>.env</code>, keys, and anything that feels like a secret stay out. Once a secret is committed, assume it is burned, even if you later delete the file. History keeps the bytes. We will use <code>.gitignore</code> on day one for the obvious junk, editor swap files, <code>__pycache__</code>, OS dust.</p><p>You will make a first repository that is yours. Not a tutorial clone named my-first-repo following a blog's commit messages. A directory with a short README that says what it is, one or two files, a few commits that a stranger could read as a story. I will look at <code>git log</code> and <code>git status</code>. If the story is initial commit plus a dump, we redo it. Remote <code>push</code> comes after local history is real. Publishing is not the skill this lesson is for. History you can explain is.</p></div>
-<h2>Work</h2>
-<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
-<div class="work"><ol><li>Closed-resource. Install Git if needed, then <code>git --version</code>. In a new directory, <code>git init</code>. Create a README. <code>status</code>, <code>add</code>, <code>commit</code>. Change the README. <code>diff</code>. Commit again. <code>log</code>. Paste nothing into chat yet. Be ready to show me the log in a session.</li><li>Create a branch. Switch to it. Add a file. Commit. Switch back to the original branch. Say in chat, without looking at notes, where that new file went and how you would get it back.</li><li>Add a <code>.gitignore</code> that excludes at least one real junk pattern on your machine. Commit it. Prove with <code>status</code> that a junk file is untracked on purpose.</li><li>Do not push to GitHub until I say. Do not commit a secret. Do not use <code>git add .</code> blindly if you cannot name what it will include.</li></ol></div>
-<h2>Assigned reading</h2>
-<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
-<ul class='reading locked-list'><li><div class='ttl'>MIT Missing Semester 2026, Git lecture as assigned in chat. Lectures 1 through 5 and 8 and 9 are in scope for C0. <span class="pill locked">Locked</span></div><p class='note'>I will point at the Git lecture and the exercises. Official Git docs for init, status, add, commit, switch, diff, log only.</p></li></ul>
-<h2>Mastery</h2>
-<div class="paper"><p>From a dirty directory you can status, stage, commit, branch, diff, and read the log. You can explain working tree vs last commit. You do not put secrets in history. I will watch this on your machine.</p></div>
-<nav class="pager">
-<a href="../lessons/c0-3.html">Previous: C0.3 Editor and terminal workflow</a>
-<a href="../lessons/c0-5.html">Next: C0.5 Debugging a broken environment</a>
-</nav>
-
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c0.html">C0 Computing Environment</a> · Phase 1, Foundations</p><header class="chapter-head"><p class="chapter-meta">C0 · Chapter 4 · Git I</p><h1>Git I</h1><p class="time-est">90 minutes · <span class="pill locked">Locked</span></p></header><div class='banner'><strong>Locked.</strong> Because C0.3 Editor and terminal workflow is not mastered yet. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div><section class="outcomes" id="outcomes"><p class="section-label">What you will be able to do</p><ul class='obj'><li>Say what Git records, and say that GitHub is not Git.</li><li>Create a repository, read status, stage, commit, and read a log.</li><li>Make a branch, switch, and read a diff.</li><li>Name what is in the working tree versus the last commit.</li><li>Keep secrets and junk out of the first commit.</li></ul></section><section class=watch id=watch><p class="section-label">Watch</p><p class=watch-title>Version Control and Git, Missing Semester 2026</p><div class=video-wrap><iframe src="https://www.youtube.com/embed/9K8lB61dl3Y" title="Version Control and Git, Missing Semester 2026" allowfullscreen></iframe></div><p class=watch-notes>Read the notes: <a href="https://missing.csail.mit.edu/2026/version-control/">Missing Semester 2026 Git lecture notes</a></p><p class=watch-lead>Watch this, then read the notes. Then do the work on your Mac. Write your own sentence in the work log. Do not paste theirs.</p></section><section class="defs" id="definitions"><p class="section-label">Definitions</p><dl class="def-list"><dt>Git</dt><dd>A program that records a history of snapshots you chose.</dd><dt>GitHub</dt><dd>A company that hosts Git repositories and adds a website.</dd><dt>repository</dt><dd>A folder whose history Git is recording, stored in a hidden .git.</dd><dt>commit</dt><dd>A snapshot you chose, with a message and a parent.</dd><dt>staging area</dt><dd>The exact changes marked for the next commit.</dd><dt>branch</dt><dd>A movable name that points at a commit.</dd><dt>working tree</dt><dd>The files on disk right now, which may differ from the last commit.</dd></dl></section><section class="diagram" id="diagram"><p class="section-label">Diagram</p><pre class="diagram-ascii">working tree   files you see and edit
+      |
+      | git add
+      v
+staging area   the next snapshot, chosen
+      |
+      | git commit
+      v
+history        commits on a branch</pre><p class="diagram-cap">status tells you which layer you are looking at. Ask it before you ask me.</p></section><div class="teach-chapters"><section class="teach-ch"><h2 class="teach-h">Git is not GitHub</h2><div class="prose"><p>GitHub is a company that hosts Git repositories and adds a website. Git is a program that records a history of your project as a sequence of commits you chose to make.</p><p>If you only ever click upload, you have a backup with extra steps. If you can commit locally, read a diff, and say what changed, you have an instrument.</p></div><div class="do-now"><p class="do-label">Do this now</p><pre><code>git --version</code></pre><p class="do-expect">A version line. If the shell says command not found, install Git for macOS first, then run this again.</p></div></section><section class="teach-ch"><h2 class="teach-h">Init, status, add, commit</h2><div class="prose"><p>A repository is a folder with a hidden .git that stores history. git init creates it. After that, every file is in a state you must be able to name. Untracked: Git does not know it. Modified: Git knew an older version. Staged: you marked these exact changes for the next snapshot. Committed: in history.</p><p>git status is the map. People who skip status live in surprise. I will ask for status before I look at anything else.</p><p>A commit is not a save. Your editor already saved the bytes to disk. A commit is a checkpoint you are willing to talk about later. Good messages say why, not update.</p></div><div class="do-now"><p class="do-label">Do this now</p><pre><code>mkdir -p /tmp/c0-4 &amp;&amp; cd /tmp/c0-4
+git init
+echo &quot;C0.4 lab&quot; &gt; README.md
+git status
+git add README.md
+git commit -m &quot;Explain the lab in the README&quot;
+git log --oneline</code></pre><p class="do-expect">status should go from untracked to clean. log should show one commit with your message.</p></div></section><section class="teach-ch"><h2 class="teach-h">Diff and a second commit</h2><div class="prose"><p>Change the README. git diff shows unstaged changes. git add, then git diff --staged shows what the next commit will contain. Commit again. git log should now tell a two-step story.</p></div><div class="do-now"><p class="do-label">Do this now</p><pre><code>cd /tmp/c0-4
+echo &quot;Second line.&quot; &gt;&gt; README.md
+git diff
+git add README.md
+git commit -m &quot;Add a second line to the README&quot;
+git log --oneline</code></pre><p class="do-expect">Two commits. The messages should be readable by a stranger.</p></div></section><section class="teach-ch"><h2 class="teach-h">Branches</h2><div class="prose"><p>A branch is a movable pointer to a commit. You make a branch before you experiment so main stays a place you can return to.</p><p>git switch -c try-it creates and moves you. git switch main moves you back. The file you added on try-it is not on main until you merge. Merge waits for C4. Today you need create, switch, commit, look around.</p></div><div class="do-now"><p class="do-label">Do this now</p><pre><code>cd /tmp/c0-4
+git switch -c try-it
+echo extra &gt; extra.txt
+git add extra.txt
+git commit -m &quot;Try a second file on a branch&quot;
+git switch main
+ls
+git switch try-it
+ls</code></pre><p class="do-expect">On main, extra.txt is gone from the listing. On try-it, it is back. The file is in history, not deleted.</p></div></section><section class="teach-ch"><h2 class="teach-h">Ignore junk. Keep secrets out.</h2><div class="prose"><p>What Git is not: undo as a lifestyle, a substitute for backups, a place to put passwords. Once a secret is committed, assume it is burned. History keeps the bytes.</p><p>.gitignore lists names Git should not track. Editor swap files, __pycache__, .DS_Store, .env. Commit the ignore file on day one.</p><p>Do not push to GitHub until I say. Publishing is not the skill this lesson is for. History you can explain is.</p></div><div class="do-now"><p class="do-label">Do this now</p><pre><code>cd /tmp/c0-4
+echo .DS_Store &gt; .gitignore
+touch .DS_Store
+git status
+git add .gitignore
+git commit -m &quot;Ignore macOS folder dust&quot;</code></pre><p class="do-expect">status should not list .DS_Store as a file to add. It should list .gitignore until you commit it.</p></div></section></div><section class="check" id="knowledge-check"><p class="section-label">Knowledge check</p><p class="lock-note">Click a question. Think. Do not search. Answers are not on this page.</p><details class='think'><summary>1. What is the difference between Git and GitHub?</summary><p>Think it through. Write your answer in your own words. I am not printing an answer here.</p></details><details class='think'><summary>2. What four file states must you be able to name after git init?</summary><p>Think it through. Write your answer in your own words. I am not printing an answer here.</p></details><details class='think'><summary>3. Why is a commit not the same thing as saving in your editor?</summary><p>Think it through. Write your answer in your own words. I am not printing an answer here.</p></details><details class='think'><summary>4. What does git status tell you that git log does not?</summary><p>Think it through. Write your answer in your own words. I am not printing an answer here.</p></details><details class='think'><summary>5. If a file exists on a branch and you switch back to main, where did it go?</summary><p>Think it through. Write your answer in your own words. I am not printing an answer here.</p></details><details class='think'><summary>6. Why is a secret in an old commit still a problem after you delete the file?</summary><p>Think it through. Write your answer in your own words. I am not printing an answer here.</p></details></section><section class="implement" id="implement"><p class="section-label">Implement</p><p class="lock-note">Closed-resource terminal drills. No Bandit walkthrough. No solutions on this site.</p><div class='work'><ol><li>Install Git if needed, then git --version. In a new folder, git init. Create a README. status, add, commit. Change the README. diff. Commit again. log. Be ready to show me the log.</li><li>Create a branch. Switch to it. Add a file. Commit. Switch back to the original branch. In the work log, without looking at notes, say where that new file went and how you would get it back.</li><li>Add a .gitignore that excludes at least one real junk pattern on your Mac. Commit it. Prove with status that a junk file is untracked on purpose.</li><li>Write commit messages that say why. I will reject initial commit plus a dump.</li><li>Do not push to GitHub until I say. Do not commit a secret. Do not use git add . if you cannot name what it will include.</li></ol></div></section>
+<section class="work-log is-locked" id="work-log" data-lesson="c0-4" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-c0-4">Your answer</label>
+<textarea id="work-body-c0-4" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+<section class="mastery-sec" id="mastery"><p class="section-label">Mastery</p><div class="paper"><p>From a dirty directory you can status, stage, commit, branch, diff, and read the log. You can explain working tree versus last commit. You do not put secrets in history. I will watch this on your machine.</p></div></section><nav class="pager"><a href="../lessons/c0-3.html">Previous: C0.3 Editor and terminal workflow</a><a href="../lessons/c0-5.html">Next: C0.5 Debugging a broken environment</a></nav>
 <p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
 </div></main>
 </div>
@@ -59,5 +86,7 @@
 <a class="" href="../about.html">About</a>
 </nav>
 <script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
 </body>
 </html>
