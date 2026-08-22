@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C6.2 API design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c6.html">C6 Backend Systems</a> · Phase 3, Professional web systems</p>
+<p class="kicker">C6.2 · 120 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>API design</h1>
+<p class="lede">C6 Backend Systems</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Design a small JSON HTTP API: resources, verbs, error shape.</li><li>Keep URLs as nouns. Keep verbs in the method.</li><li>Document one error body and stick to it.</li><li>Refuse a design that is one POST /doStuff that does everything.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>REST, in the sense juniors can defend, is this. Resources have URLs. Methods mean what HTTP says. Representations are JSON in this course. Errors are consistent. We are not doing dissertation REST. We are doing APIs a teammate can call without reading your source.</p><p>A resource is a thing you can name. <code>/orders</code>. <code>/orders/119</code>. Creating is POST to the collection. Reading is GET. Replacing is PUT. Partial update is PATCH if you mean it. Deleting is DELETE. Query parameters filter. They do not hide a second RPC. If you need an RPC such as <code>/orders/119/cancel</code>, we will name it and live with it, honestly.</p><p>Error shape is a spec. I will pick one for the course repo, a small object with error and code, or RFC 7807. Status codes stay honest. Do not invent a parallel language of success false. Honesty means 404 is a missing noun, not a panic, unless we decided to hide existence and wrote that down.</p><p>I will reject a single do-everything POST. I will reject designs until they are honest. Design first. Code after I accept the paths. The loop is the assignment. I send a prompt you have not seen in class. Paths, methods, error examples. I reject. You revise.</p><p>Nouns in the URL, verbs in the method, one error body. If you cannot defend the errors, you do not have an API. You have a bag of handlers. Closed-resource on the first draft. No AI writing a fashionable resource tree you cannot explain.</p><p>Backend work in this program is HTTP plus a relational database plus a thin framework, in that order. FastAPI is not the syllabus. If you cannot read a raw request, predict a join, or justify an index, a green OpenAPI page is decoration. We talk to Postgres with parameters before any ORM. Transactions are how two writes become one fact. Validation dies at the edge with a 4xx that names the field. The service you build here is the skeleton of P1. Dishonest schemas get rejected until they are honest. That loop is the course.</p><p>Nouns in the URL, verbs in the method, one error body. I will reject a single do-everything POST. Honesty means 404 is a missing noun, not a panic, unless we decided to hide existence and wrote that down. Design first. Code after I accept the paths.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Design an API for a prompt I have not shown you in class. I will send it. No code first. Paths, methods, error examples.</li><li>I reject. You revise. That loop is the assignment.</li><li>Closed-resource design review. No AI on the first draft.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>MDN, HTTP methods / resource URLs as assigned <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li><li><div class='ttl'>My API design prompts <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You can design a small API on a new prompt and defend the errors.</p></div>
+<nav class="pager">
+<a href="../lessons/c6-1.html">Previous: C6.1 HTTP and the web as a system</a>
+<a href="../lessons/c6-3.html">Next: C6.3 Relational model</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
