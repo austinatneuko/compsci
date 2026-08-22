@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C4.1 Specs and pre/post</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c4.html">C4 Software Construction</a> · Phase 2, Structures and construction</p>
+<p class="kicker">C4.1 · 80 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Specs and pre/post</h1>
+<p class="lede">C4 Software Construction</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Write a spec with preconditions, postconditions, and an invariant you can test.</li><li>Separate what the function promises from how it is implemented.</li><li>Refuse a spec that is a restatement of the code.</li><li>Use the spec as the thing tests are allowed to check.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>A specification is a contract. If the caller meets the preconditions, the function meets the postconditions, and any invariant the type claims still holds. It is not a comment that repeats the <code>for</code> loop in English. A spec that repeats the loop in English is a diary. A spec another person could implement is a contract. MIT 6.1020's whole personality is this idea, and we steal it without stealing their Java. We do the work in Python.</p><p>Preconditions are what you assume. <code>xs</code> is non-empty. <code>i</code> is a valid index. The file exists. Preconditions are where you stop blaming the function. Postconditions are what is true after. The returned mean is the arithmetic mean. The list is sorted in nondecreasing order. The file now contains one extra line. Postconditions are what tests are allowed to see. Invariants are what stays true. This list has no duplicates. This stack's size is the number of pushes minus pops. Invariants are what must still be true after a public operation.</p><p>Why this is not ceremony: a test is a check of a contract. If there is no contract, the test is a snapshot of today's implementation. When I say write tests for a spec you did not implement on the C4 exam, I mean this skill. Black-box tests that could fail the spec even if they never see your body.</p><p>We will write specs before bodies on designated assignments. Where you write the body first, you will still go back and write the contract as if a stranger will implement against it. If the stranger could not, the spec is a diary entry. I will give you a spec with a hole. Find the hole. That is as useful as writing a clean one.</p><p>Take three C1 or C2 functions and write pre, post, invariant in a docstring format I specify. No AI on the first spec pass. A model will give you fluent restatements of the loop. That is the thing I am training you to refuse.</p><p>C4 is the course where other people have to live with your code. Specs, ADTs, tests, PR-quality Git, review, a debugging method, API-shaped errors, a little FP taste, and AI evaluation as law. MIT 6.1020 is the gold statement of the ideas; we do the work in Python. Google engineering practices are a baseline, not scripture. Dual-track work starts here: closed first, then catch the model. If you treat this course as a checklist of tools, you will still write a 400-line main. If you treat it as contracts plus history plus review, P1 becomes possible.</p><p>A spec that repeats the loop in English is a diary. A spec another person could implement is a contract. Preconditions are where you stop blaming the function. Postconditions are what tests are allowed to see. Invariants are what must still be true after a public operation. Write them before the body on the assignments I mark. The C4 exam will ask you to test a spec you did not implement.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Take three C1/C2 functions and write pre/post/invariant in a docstring format I specify.</li><li>Write tests that could fail the spec even if they never see your body. Black box.</li><li>I will give you a spec with a hole. Find the hole. Closed-resource.</li><li>No AI on the first spec pass.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>MIT 6.1020 topics, specifications, ideas; we work in Python <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li><li><div class='ttl'>Google Testing Blog, one assigned post <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You can write a spec that another person could implement and that tests can police.</p></div>
+<nav class="pager">
+<a href="../lessons/c2-6.html">Previous: C2-lite.6 Choose and justify</a>
+<a href="../lessons/c4-2.html">Next: C4.2 ADTs and representation independence</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

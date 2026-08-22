@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C3.2 Sets, functions, relations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c3.html">C3 Discrete Mathematics</a> · Phase 5, Proof and full algorithms</p>
+<p class="kicker">C3.2 · 80 h course · post-gate <span class="pill locked">Locked</span></p>
+<h1>Sets, functions, relations</h1>
+<p class="lede">C3 Discrete Mathematics</p>
+<div class='banner'><strong>Locked.</strong> Until Gate A. Systems depth and remaining CS wait until you can apply. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Use set notation and the usual operations without waving.</li><li>Define a function as a mapping with a domain and codomain, and say if it is injective/surjective.</li><li>Treat a relation as a set of pairs; know reflexive/symmetric/transitive as checks.</li><li>Connect this to types and to &quot;is this a well-defined mapping.&quot;</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>Sets are how we name collections without pretending they are lists. Union, intersection, complement, product. You will compute small ones and write one inclusion proof: <code>A ⊆ B</code> means every x in A is in B. Empty-set edge cases are not cute; they are where people fail induction later.</p><p>A function is a relation with a uniqueness property: each input in the domain has exactly one output. Injection and surjection will return in counting and in &quot;can I invert this.&quot; In programming, a function that maps two users to the same id is a failed injection you shipped.</p><p>Equivalence relations partition a set. &quot;Same remainder mod n&quot; is the example we will keep. You will check the three properties, not recite them.</p><p>Injection and surjection return when you ask whether a mapping is reversible. An equivalence relation partitions. Empty-set edges are where induction later dies. One inclusion proof is required: every x in A is in B, not a picture of circles you did not argue.</p><p>Discrete math in this program is CS 70 style: math you will use on programs and algorithms, not a symbol museum. Junior loops do not test proofs. That is why we deferred this past the gate. It is still the program. We did not delete CS. We reordered it.</p><p>Proofs are written so I can see the claim, the setup, the argument, and the close. Examples are not a proof. A symbol pile is not a proof. Oral defense is how I catch a fluent fake. A model will give you a fluent fake. Closed.</p><p>Discrete math is deferred because junior loops do not test proofs, not because proofs are optional for a complete engineer. Logic, sets, induction, counting, graphs, modular arithmetic, and proofs you will use on programs. You will prove a loop invariant on code you wrote in C2, prove a simple graph claim, and refute a wrong induction. No coding-heavy work. A fluent fake proof is a fail when I poke a hole. This course feeds C5-remainder and C12. If a loop exposes the hole during search, we schedule it sooner. We do not lower the gate.</p><p>Discrete math is deferred because junior loops do not test proofs, not because proofs are optional for a complete engineer. Logic, sets, induction, counting, graphs, modular arithmetic, and proofs you will use on programs. You will prove a loop invariant on code you wrote in C2, prove a simple graph claim, and refute a wrong induction. No coding-heavy work. A fluent fake proof is a fail when I poke a hole. This course feeds C5-remainder and C12. If a loop exposes the hole during search, we schedule it sooner. We do not lower the gate.</p><p>Injection and surjection return when you ask whether a mapping is reversible. An equivalence relation partitions. Empty-set edges are where induction later dies. One inclusion proof is required: every x in A is in B, not a picture of circles you did not argue.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Written set/function/relation set. One inclusion proof.</li><li>Closed-resource. No code-heavy work.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>6.042J or Levin. sets and functions, assigned <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You can prove a small inclusion and check a relation's properties.</p></div>
+<nav class="pager">
+<a href="../lessons/c3-1.html">Previous: C3.1 Logic and quantifiers</a>
+<a href="../lessons/c3-3.html">Next: C3.3 Induction and invariants</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
