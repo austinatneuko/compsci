@@ -5,11 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1c1610">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<title>C1.3 Functions and scope</title>
+<title>C1.3 Loops</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/app.css">
+<link rel="stylesheet" href="../assets/work.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -25,30 +26,24 @@
 <div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
 </aside>
 <main class="main" id="main"><div class="inner">
-
-<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c1.html">C1 Programming Fundamentals in Python</a> · Phase 1, Foundations</p>
-<p class="kicker">C1.3 · 100 h course · pre-gate <span class="pill locked">Locked</span></p>
-<h1>Functions and scope</h1>
-<p class="lede">C1 Programming Fundamentals in Python</p>
-<div class='banner'><strong>Locked.</strong> Because C0 module 3, editor and terminal workflow, is not mastered yet. C1 can start in parallel only after that. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
-
-<h2>Objectives</h2>
-<ul class='obj'><li>Write a function that takes arguments and returns a value, not one that only prints.</li><li>Explain scope. A name inside the function is not the name outside, even if it looks the same.</li><li>Say what happens to objects passed in. Rebinding a parameter is local. Mutating a mutable object is not.</li><li>Read a traceback that names your function and jump to that line.</li><li>Keep functions small enough to explain in one breath.</li></ul>
-<h2>Teaching</h2>
-<div class="prose"><p>A function is a named piece of computation with inputs and an output. You define it once. You call it whenever that computation is the next thing you need. If you are copying the same six lines, you are late to this lesson.</p><p><code>def</code> creates the function object and binds it to a name. The body does not run at definition time, except in the ways we will not use yet. A call <code>f(3)</code> binds the parameter names to the argument objects and runs the body. <code>return</code> hands a value back to the caller and stops the function. If you omit <code>return</code>, the function still returns. It returns <code>None</code>. That is why a function that only <code>print</code>s is a dead end for testing and composition. Print is a side effect for humans. Return is how programs talk to themselves.</p><p>Parameters are names local to the call. Assigning to a parameter rebinds that local name. It does not rebind the caller's name. This is the same picture as C1.1, now inside a call. The twist. If the object is mutable and you mutate it, append to a list, set a key on a dict, the caller sees the mutation, because you did not rebind. You changed the object both names refer to. I will put this on the exam. Draw it.</p><p>Scope in C1 is local versus global. A name assigned in the function is local unless you do something exotic, which you will not. Reading a global is legal and usually a smell. Writing a global with <code>global</code> is a smell I will reject. Pass values in. Return values out. Hidden state is how a 40-line homework becomes undebuggable.</p><p>Docstrings start now. One sentence under the <code>def</code> that says what the function returns given what. Not a novel. Not this function does stuff. We will turn these into contracts in C4. Today they are how you notice you cannot state the job.</p><p>Tracebacks are a gift. Read from the bottom. Exception type and message. Then the last stack frame that is your file. File, line, function. Go there. Do not start at the top of a library path you did not write. Do not paste the traceback into a model in this course until I say AI-open.</p><p>Size. If I ask what the function does and you need a paragraph, it is two functions. Helpers are free. Nested helpers we will mostly avoid until you can explain closures, which is not this week.</p><p>Default arguments exist. Do not use a mutable default, <code>def f(xs=[])</code>. That bug is famous because it is real. If you need a default empty list, use <code>None</code> and create a list in the body. I will deduct for the famous bug after I have warned you, which is now.</p></div>
-<h2>Work</h2>
-<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
-<div class="work"><ol><li>Write <code>absolute(n)</code> that returns the absolute value without calling <code>abs</code>. Print is not allowed inside it. Write three calls that print the results from the outside.</li><li>On paper, <code>def f(x): x = x + 1; return x</code> then <code>n = 4; m = f(n)</code>. What are n and m? Then the list version, <code>def g(xs): xs.append(1)</code> called on <code>a = [0]</code>. What is a? Draw the names.</li><li>Trigger a TypeError or ValueError inside a two-function call chain. Read the traceback out loud in chat. Which function, which line, which message.</li><li>Take a 20-line script from C1.2 and extract at least two functions that return values. Run it. Commit.</li><li>Closed-resource. No AI. No <code>global</code>.</li></ol></div>
-<h2>Assigned reading</h2>
-<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
-<ul class='reading locked-list'><li><div class='ttl'>Official Python tutorial, defining functions, selected <span class="pill locked">Locked</span></div><p class='note'>Skip *args/**kwargs beyond a mention until you need them.</p></li><li><div class='ttl'>Think Python, functions and fruitful functions <span class="pill locked">Locked</span></div><p class='note'>Assigned chapters in chat.</p></li><li><div class='ttl'>Selected MIT 6.1000 or CS50P lecture on functions <span class="pill locked">Locked</span></div><p class='note'>Minutes in chat.</p></li></ul>
-<h2>Mastery</h2>
-<div class="paper"><p>You write functions that return. You can draw parameter binding versus mutation. You can follow a traceback to your line. Independent. I will watch a live trace on paper.</p></div>
-<nav class="pager">
-<a href="../lessons/c1-2.html">Previous: C1.2 Control flow</a>
-<a href="../lessons/c1-4.html">Next: C1.4 Sequences and dictionaries</a>
-</nav>
-
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c1.html">C1 Programming Fundamentals in Python</a> · Phase 1, Foundations</p><header class="chapter-head"><p class="chapter-meta">C1 · Harvard CS50P · Loops</p><h1>Loops</h1><p class="time-est">180 minutes · <span class="pill locked">Locked</span></p></header><p class="source-line">Official: Harvard CS50P, week 2 · <a href="https://cs50.harvard.edu/python/">course home</a> · <a href="https://cs50.harvard.edu/python/notes/2/">notes</a></p><div class="prose wrap-brief"><p>Watch week 2. Their problem set on their site.</p><p>I grade a loop you can dry-run out loud.</p></div><div class='banner'><strong>Locked.</strong> C1 starts after C0.3 mastered. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div><section class="watch" id="watch"><p class="section-label">Watch</p><p class="watch-title">CS50P week 2: Loops</p><div class="video-wrap"><iframe src="https://www.youtube.com/embed/-7xg8pGcP6w" title="CS50P week 2: Loops" allowfullscreen></iframe></div></section><section class="read" id="read"><p class="section-label">Read</p><p class="watch-notes"><a href="https://cs50.harvard.edu/python/notes/2/">CS50P week 2 notes</a></p><p class="lock-note">URL is here so the map is complete. Materials stay locked. Do not start until this lesson is current.</p></section><section class="implement" id="do"><p class="section-label">Do on their site</p><p class="lock-note">Listed so you can see the work. Not assigned. Do not start. No solutions on this site.</p><ol class="do-official"><li><a href="https://cs50.harvard.edu/python/psets/2/camel/">camelCase</a></li><li><a href="https://cs50.harvard.edu/python/psets/2/coke/">Coke Machine</a></li><li><a href="https://cs50.harvard.edu/python/psets/2/twttr/">Just setting up my twttr</a></li><li><a href="https://cs50.harvard.edu/python/psets/2/plates/">Vanity Plates</a></li><li><a href="https://cs50.harvard.edu/python/psets/2/nutrition/">Nutrition Facts</a></li></ol></section><section class="check" id="knowledge-check"><p class="section-label">CompSci check</p><p class="lock-note">Answer in your own words. Answers are not on this page.</p><details class='think'><summary>1. What is a loop for that copy-paste is not?</summary><p>Think it through. Write your answer in your own words. I am not printing an answer here.</p></details><details class='think'><summary>2. When would you use <code>for</code> instead of <code>while</code>?</summary><p>Think it through. Write your answer in your own words. I am not printing an answer here.</p></details><details class='think'><summary>3. How do you know a loop will stop?</summary><p>Think it through. Write your answer in your own words. I am not printing an answer here.</p></details></section>
+<section class="work-log is-locked" id="work-log" data-lesson="c1-3" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-c1-3">Your answer</label>
+<textarea id="work-body-c1-3" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+<section class="mastery-sec" id="mastery"><p class="section-label">Mastery</p><div class="paper"><p>You can write a loop, say what changes each pass, and stop it on purpose. I will ask you to dry-run it.</p></div></section><nav class="pager"><a href="../lessons/c1-2.html">Previous: C1.2 Conditionals</a><a href="../lessons/c1-4.html">Next: C1.4 Exceptions</a></nav>
 <p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
 </div></main>
 </div>
@@ -59,5 +54,7 @@
 <a class="" href="../about.html">About</a>
 </nav>
 <script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
 </body>
 </html>
