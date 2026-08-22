@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C13.6 Constraints and integrity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c13.html">C13 Databases as Systems</a> · Phase 7 — Production-scale thinking</p>
+<p class="kicker">C13.6 · 70 h course · post-gate <span class="pill locked">Locked</span></p>
+<h1>Constraints and integrity</h1>
+<p class="lede">C13 Databases as Systems</p>
+<div class='banner'><strong>Locked.</strong> Until Gate A. Systems depth and remaining CS wait until you can apply. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Use constraints as the last line of integrity (FK, unique, check).</li><li>Know what the application still must do.</li><li>When a document store is honest: document-shaped access, weaker relations.</li><li>Sit the schema+index exam.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>Constraints are not optional decoration. If uniqueness matters, a unique constraint matters. If a child cannot outlive a parent, a foreign key matters — or you have a cleanup job you will forget. Document stores (Mongo et al.) are honest when your access is by id and the document is the unit; they are dishonest when you reinvent joins in the application and then miss integrity.</p><p>Exam: schema + index design. Exit: EXPLAIN fix + isolation bug named.</p><p>Databases as systems is storage, indexes as structures you already implemented, plans you can read, isolation you can break, a preview of copies and splits, and constraints as the last line of integrity. C6 taught SQL as a user. This course treats Postgres as a program with a file and a planner. DDIA early chapters plus EXPLAIN. The exit is a slow query you fix and an isolation bug you can name in an API.</p><p>If uniqueness matters, a unique constraint matters. Document stores are honest when the document is the unit and you are not reinventing joins. Exam: schema and index. Exit: EXPLAIN fix plus an isolation bug named.</p><p>The planner is an optimizer with estimates that can be wrong. Your job is to read the plan and change the query, the index, or the schema, and say what happened. Isolation is a story about two requests, not a level name you recited. Constraints remain the last line when the app is wrong. Document stores get an honest sentence, not a brand preference.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Exam. A paragraph on “when I would pick a document store.”</li><li>Closed-resource.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>DDIA ch. 2 (data models) assigned <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li><li><div class='ttl'>Your C6/C13 notes <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>Schema+index exam. EXPLAIN fix. Isolation bug named. Honest document-store sentence.</p></div>
+<nav class="pager">
+<a href="../lessons/c13-5.html">Previous: C13.5 Replication/partitioning (preview)</a>
+<a href="../lessons/c14-1.html">Next: C14.1 Threat modeling</a>
+</nav>
+
+<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>

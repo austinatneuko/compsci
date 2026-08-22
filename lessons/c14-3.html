@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C14.3 Web attacks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c14.html">C14 Security Fundamentals</a> · Phase 7 — Production-scale thinking</p>
+<p class="kicker">C14.3 · 50 h course · post-gate <span class="pill locked">Locked</span></p>
+<h1>Web attacks</h1>
+<p class="lede">C14 Security Fundamentals</p>
+<div class='banner'><strong>Locked.</strong> Until Gate A. Systems depth and remaining CS wait until you can apply. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Name injection, XSS, CSRF, and SSRF as classes of confused data or confused deputies.</li><li>Describe each class as a failure of a boundary, not as a recipe.</li><li>Fix a class of bug I show you, not a single string.</li><li>Work only on a legal local target I provide, when I provide it.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>Web failures in this course are the ones a sloppy product ships. Injection: data is treated as an instruction at a boundary (SQL, a shell). XSS: data is treated as markup or script in another person's browser. CSRF: a stored credential is used for a request the person did not mean. SSRF: your server fetches a URL an outsider named and becomes a deputy. Those are definitions of failed boundaries.</p><p>The work is recognition and repair: parameterized queries, templates that escape, cookie flags and tokens we already met in C8, allowlists for outbound URLs. I will show broken code I own. You will name the boundary and write the fix as a pattern. I will not publish recipes for harming systems, and you will not go looking for them.</p><p>Any lab is legal and local, on an app I provide, when I say the lab is open. No other hosts. If you are unsure whether a target is ours, you do not touch it.</p><p>Security after the gate is a threat model, primitives as contracts, classes of web failure as broken boundaries, secrets and supply chain, a sharper look at auth, and a PR review exam. You will not invent crypto. You will not touch systems you do not own. The exit is a model of a feature, two real bugs in a PR, and a TLS paragraph that is not wrong. C8 was the checklist. This is the defense.</p><p>Name the failed boundary. Repair as a pattern: parameters, escaping templates, cookie flags and tokens, allowlists for outbound URLs. Labs, if any, are legal and local on an app I provide when I say so. No other hosts. I will not publish recipes for harming systems.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>On a local app I provide (when assigned): name the broken boundary, write the fix, add a test that would have failed before the fix.</li><li>Closed-resource except the lab notes. Stay on the local target.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>OWASP Top 10 + ASVS selected — concepts and preventions <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li><li><div class='ttl'>The local app I provide, when assigned <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You can name two web failure classes and repair them as patterns, on a target I own.</p></div>
+<nav class="pager">
+<a href="../lessons/c14-2.html">Previous: C14.2 Crypto primitives</a>
+<a href="../lessons/c14-4.html">Next: C14.4 Secrets and supply chain</a>
+</nav>
+
+<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
