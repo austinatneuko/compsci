@@ -26,22 +26,22 @@
 </aside>
 <main class="main" id="main"><div class="inner">
 
-<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c13.html">C13 Databases as Systems</a> · Phase 7 — Production-scale thinking</p>
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c13.html">C13 Databases as Systems</a> · Phase 7, Production-scale thinking</p>
 <p class="kicker">C13.5 · 70 h course · post-gate <span class="pill locked">Locked</span></p>
 <h1>Replication/partitioning (preview)</h1>
 <p class="lede">C13 Databases as Systems</p>
 <div class='banner'><strong>Locked.</strong> Until Gate A. Systems depth and remaining CS wait until you can apply. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
 
 <h2>Objectives</h2>
-<ul class='obj'><li>Define replication as copies, with a leader/follower or a multi-writer story.</li><li>Define partitioning as splitting by a key, with a skew story.</li><li>Know this is a preview of C15.</li><li>Refuse “we’ll shard later” as a schema excuse for a 3-table app.</li></ul>
+<ul class='obj'><li>Define replication as copies, with a leader/follower or a multi-writer story.</li><li>Define partitioning as splitting by a key, with a skew story.</li><li>Know this is a preview of C15.</li><li>Refuse &quot;we'll shard later&quot; as a schema excuse for a 3-table app.</li></ul>
 <h2>Teaching</h2>
-<div class="prose"><p>Replication is for durability and read scale (and latency). Failover is a plot. Replication lag is why a read-after-write can miss. Partitioning (sharding) is for size and write scale; the key you pick is a fate. DDIA will say this at length in C15; today is vocabulary so C13’s storage story has a horizon.</p><p>Your P1 does not need shards. Lying about shards on a resume is a C19 problem.</p><p>Databases as systems is storage, indexes as structures you already implemented, plans you can read, isolation you can break, a preview of copies and splits, and constraints as the last line of integrity. C6 taught SQL as a user. This course treats Postgres as a program with a file and a planner. DDIA early chapters plus EXPLAIN. The exit is a slow query you fix and an isolation bug you can name in an API.</p><p>Copies for durability and reads. Lag is why a read-after-write misses. Failover is a plot. Splits by key, skew as fate. P1 does not need shards. Resume fashion about shards is a C19 problem. Vocabulary so C15 has a horizon.</p><p>The planner is an optimizer with estimates that can be wrong. Your job is to read the plan and change the query, the index, or the schema, and say what happened. Isolation is a story about two requests, not a level name you recited. Constraints remain the last line when the app is wrong. Document stores get an honest sentence, not a brand preference.</p><p>The planner is an optimizer with estimates that can be wrong. Your job is to read the plan and change the query, the index, or the schema, and say what happened. Isolation is a story about two requests, not a level name you recited. Constraints remain the last line when the app is wrong. Document stores get an honest sentence, not a brand preference.</p></div>
+<div class="prose"><p>Replication is for durability and read scale, and latency. Failover is a plot. Replication lag is why a read-after-write can miss. Partitioning, sharding, is for size and write scale; the key you pick is a fate. DDIA will say this at length in C15; today is vocabulary so C13's storage story has a horizon.</p><p>Your P1 does not need shards. Lying about shards on a resume is a C19 problem.</p><p>Copies for durability and reads. Lag is why a read-after-write misses. Failover is a plot. Splits by key, skew as fate. P1 does not need shards. Resume fashion about shards is a C19 problem. Vocabulary so C15 has a horizon.</p><p>C6 taught SQL as a user. This course treats Postgres as a program with a file and a planner. The planner is an optimizer with estimates that can be wrong. Your job is to read the plan and change the query, the index, or the schema, and say what happened.</p><p>Isolation is a story about two requests, not a level name you recited. Constraints remain the last line when the app is wrong. Document stores get an honest sentence, not a brand preference.</p><p>Databases as systems is storage, indexes as structures you already implemented, plans you can read, isolation you can break, a preview of copies and splits, and constraints as the last line of integrity. C6 taught SQL as a user. This course treats Postgres as a program with a file and a planner. DDIA early chapters plus EXPLAIN. The exit is a slow query you fix and an isolation bug you can name in an API.</p><p>Databases as systems is storage, indexes as structures you already implemented, plans you can read, isolation you can break, a preview of copies and splits, and constraints as the last line of integrity. C6 taught SQL as a user. This course treats Postgres as a program with a file and a planner. DDIA early chapters plus EXPLAIN. The exit is a slow query you fix and an isolation bug you can name in an API.</p><p>Copies for durability and reads. Lag is why a read-after-write misses. Failover is a plot. Splits by key, skew as fate. P1 does not need shards. Resume fashion about shards is a C19 problem. Vocabulary so C15 has a horizon.</p></div>
 <h2>Work</h2>
 <p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
 <div class="work"><ol><li>Written: lag story, skew story. Closed-resource.</li></ol></div>
 <h2>Assigned reading</h2>
 <p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
-<ul class='reading locked-list'><li><div class='ttl'>DDIA ch. 4–5 preview as assigned (I will not dump all of C15 now) <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<ul class='reading locked-list'><li><div class='ttl'>DDIA ch. 4 to 5 preview as assigned, I will not dump all of C15 now, <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
 <h2>Mastery</h2>
 <div class="paper"><p>You can define replica lag and partition skew in one paragraph each.</p></div>
 <nav class="pager">
@@ -49,7 +49,7 @@
 <a href="../lessons/c13-6.html">Next: C13.6 Constraints and integrity</a>
 </nav>
 
-<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
 </div></main>
 </div>
 <nav class="bottom-nav" aria-label="Primary">
