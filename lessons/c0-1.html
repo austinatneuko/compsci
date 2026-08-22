@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C0.1 The Shell</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link on" href="../index.html">Now</a>
+<a class="nav-link " href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c0.html">C0 Computing Environment</a> · Phase 1 — Foundations</p>
+<p class="kicker">C0.1 · 30 h course · pre-gate <span class="pill current">Current</span></p>
+<h1>The Shell</h1>
+<p class="lede">C0 Computing Environment</p>
+<div class='banner'><strong>This is the current lesson.</strong> Answer the open question in CompSci chat before any assigned reading. Missing Semester lecture 1 stays LOCKED until I release it.</div>
+
+<div class="paper open-q">
+<p class="kicker">Still open</p>
+<p>In one sentence, without looking it up: what do you think a shell is?</p>
+<p>Answer in CompSci chat. I will not accept a pasted definition. I will accept an honest sentence, even if it is wrong, and then we will tighten it.</p>
+</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Say, in your own words, what job a shell is doing — before you memorize anyone else’s sentence.</li><li>Distinguish a graphical menu of actions from a textual interface that starts programs by name.</li><li>Know why engineers still live in a shell on machines that also have a desktop.</li><li>Treat this page as teaching, not as completion. Ratings move in CompSci chat and on a real terminal.</li><li>Leave Missing Semester lecture 1 closed until it is released in chat.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>You already know how to give a computer orders. You tap an icon. You click a menu. You ask a chat box to do something that someone else wired up. Those interfaces are not the computer. They are a menu of actions a designer chose to put on the screen. If the action is not on the menu, you cannot name it. That is fine for mail and maps. It is a ceiling for engineering.</p><p>A working computer is a machine that runs programs. Each program is a file. It takes input, it does work, it writes output, it exits. The question this lesson is about is not “what is Linux.” It is: when you want to start a program that is not on any menu, pass it arguments, read what it printed, and do that a hundred times in a row or on a machine you will never see — what kind of interface is that?</p><p>I am not going to hand you a one-line textbook definition and call it mastery. I want your sentence first. People who copy “a command-line interpreter” can still be lost when a prompt is sitting there waiting. People who have a picture — a program whose job is to start other programs, pass them text, and show you what came back — can learn the syntax later and not lose the plot.</p><p>Why engineers use one, even on a laptop with a beautiful desktop: composition, repetition, and distance. Composition: the output of one program is text, and the input of the next program is text, so you can snap tools together that were never designed as a pair. Repetition: once you can name a sequence, you can put it in a file and run it tomorrow. Distance: the same textual interface works on your machine and on a server in another city that has no mouse and no screen. A GUI that cannot be scripted, piped, or SSHed is a local convenience. It is not a professional environment.</p><p>There is also honesty. A graphical installer will hide a failure behind a spinner. A shell prints the error the program actually produced. That is rude and useful. You will spend a career reading rude, useful text.</p><p>A shell session has a rhythm you will learn by ear. It prints a prompt. You type a line. You press return. Something runs, or the shell tells you it could not find what you named. Then another prompt. That loop is the whole game at the user level: you are talking to a program that talks to other programs. Later we will be precise about processes, PATH, and exit codes. Today I want the shape, not the glossary.</p><p>You may have used a “terminal” app, or seen a black rectangle in a movie. The rectangle is a window. The program inside it is usually a shell. People conflate the two. We will separate them in C0.3. For now, notice that the useful object is not the decoration. It is the conversation: you name work, the machine does it or fails in public.</p><p>This program will not mark C0.1 complete because you opened a webpage. I teach here. You answer in CompSci chat. You demonstrate on a real Unix shell — macOS Terminal, Linux, or Windows with WSL. A phone is for reading. The work happens on a computer that can run programs you type.</p><p>Still open, and it stays open until you answer it in chat, without looking it up: In one sentence, what do you think a shell is? I will not accept a pasted definition. I will accept an honest sentence, even if it is wrong, and then we will tighten it.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are assigned. Closed-resource. No solutions on this site.</p>
+<div class="work"><ol><li>Closed-resource. Do not search. Do not open Missing Semester. Do not start Bandit.</li><li>In CompSci chat, answer in one sentence, without looking it up: what do you think a shell is?</li><li>If you have a computer with a terminal, open it and look at the prompt. Do not follow a tutorial. Notice that it is waiting. That is all for now.</li><li>Write down one thing you have only ever done to a computer by clicking, and guess whether a program exists that does the same job by name. Do not run it yet.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading'><li><div class='ttl'>MIT Missing Semester 2026, lecture 1 — The Shell <span class="pill locked">Locked</span></div><p class='note'>LOCKED until released in CompSci chat. Do not open it yet. I will assign the notes and exercises after your sentence, not before.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You can give a sentence that is yours about what a shell is for, then — after I release the reading — use a real shell to start a program by name and read what it printed. Opening this page does not move the Unix-shell rating. Demonstration in CompSci chat and on a terminal does.</p></div>
+<nav class="pager">
+<a class="btn ghost" aria-disabled="true">Previous</a>
+<a href="../lessons/c0-2.html">Next: C0.2 Filesystem and permissions</a>
+</nav>
+
+<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="on" href="../index.html">Now</a>
+<a class="" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
