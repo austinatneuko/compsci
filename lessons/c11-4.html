@@ -26,22 +26,22 @@
 </aside>
 <main class="main" id="main"><div class="inner">
 
-<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c11.html">C11 Computer Networking</a> · Phase 6 — Computer systems</p>
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c11.html">C11 Computer Networking</a> · Phase 6, Computer systems</p>
 <p class="kicker">C11.4 · 60 h course · post-gate <span class="pill locked">Locked</span></p>
 <h1>Routing/DNS (short)</h1>
 <p class="lede">C11 Computer Networking</p>
 <div class='banner'><strong>Locked.</strong> Until Gate A. Systems depth and remaining CS wait until you can apply. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
 
 <h2>Objectives</h2>
-<ul class='obj'><li>Explain DNS as a query for records, with a cache, that can fail.</li><li>Explain routing at a user level: packets are forwarded toward an address.</li><li>Keep this short.</li><li>Use <code>dig</code> or an equivalent I assign, carefully.</li></ul>
+<ul class='obj'><li>Explain DNS as a query for records, with a cache, that can fail.</li><li>Explain routing at a user level: packets are forwarded toward an address.</li><li>Keep this short.</li><li>Use <code> dig </code>or an equivalent I assign, carefully.</li></ul>
 <h2>Teaching</h2>
-<div class="prose"><p>DNS is a distributed database of names to records (A/AAAA, MX, CNAME). Your laptop asks a resolver; caches lie for TTL seconds (and sometimes longer when they misbehave). NXDOMAIN is a fact. A wrong record is how the whole URL walk goes to the wrong box.</p><p>Routing: each router looks at the destination IP and picks a next hop. You will not design BGP. You will know that “cannot reach” might be a route, a firewall, or a dead process on an open route — three different checks.</p><p>Networking is how HTTP stops being magic. Layers, sockets, TCP, a short DNS and routing, HTTP as bytes, TLS as a job, a packet lab. You will write a small TCP client and server and explain a slow API with the network, not the framework. C-syslit was the seatbelt. This is the course. You will not become a network engineer. You will read a capture without drowning.</p><p>A resolver, records, TTL, caches that can lie. NXDOMAIN is a fact. Routing is hop-by-hop toward an IP. Cannot reach might be a route, a firewall, or a dead process on an open route. Three checks, not one guess. Short module on purpose.</p><p>A capture is evidence. A slogan about the cloud is not. Client and server you wrote are evidence. Kurose and Ross selected, Wireshark labs I assign. Optional CS144 is depth, not an excuse to skip the small socket work. Explain slowness with hops and windows and loss, then maybe the handler.</p><p>A capture is evidence. A slogan about the cloud is not. Client and server you wrote are evidence. Kurose and Ross selected, Wireshark labs I assign. Optional CS144 is depth, not an excuse to skip the small socket work. Explain slowness with hops and windows and loss, then maybe the handler.</p></div>
+<div class="prose"><p>DNS is a distributed database of names to records, A/AAAA, MX, CNAME. Your laptop asks a resolver; caches lie for TTL seconds, and sometimes longer when they misbehave. NXDOMAIN is a fact. A wrong record is how the whole URL walk goes to the wrong box.</p><p>Routing: each router looks at the destination IP and picks a next hop. You will not design BGP. You will know that &quot;cannot reach&quot; might be a route, a firewall, or a dead process on an open route. three different checks.</p><p>A resolver, records, TTL, caches that can lie. NXDOMAIN is a fact. Routing is hop-by-hop toward an IP. Cannot reach might be a route, a firewall, or a dead process on an open route. Three checks, not one guess. Short module on purpose.</p><p>Networking is how HTTP stops being magic. C-syslit was the seatbelt. This is the course. You will not become a network engineer. You will read a capture without drowning. A capture is evidence. A slogan about the cloud is not.</p><p>Client and server you wrote are evidence. Kurose and Ross selected, Wireshark labs I assign. Explain slowness with hops and windows and loss, then maybe the handler.</p><p>Networking is how HTTP stops being magic. Layers, sockets, TCP, a short DNS and routing, HTTP as bytes, TLS as a job, a packet lab. You will write a small TCP client and server and explain a slow API with the network, not the framework. C-syslit was the seatbelt. This is the course. You will not become a network engineer. You will read a capture without drowning.</p><p>Networking is how HTTP stops being magic. Layers, sockets, TCP, a short DNS and routing, HTTP as bytes, TLS as a job, a packet lab. You will write a small TCP client and server and explain a slow API with the network, not the framework. C-syslit was the seatbelt. This is the course. You will not become a network engineer. You will read a capture without drowning.</p><p>A resolver, records, TTL, caches that can lie. NXDOMAIN is a fact. Routing is hop-by-hop toward an IP. Cannot reach might be a route, a firewall, or a dead process on an open route. Three checks, not one guess. Short module on purpose.</p></div>
 <h2>Work</h2>
 <p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
-<div class="work"><ol><li>A <code>dig</code> walk of a name I pick (after I say go). Written routing paragraph.</li><li>Closed-resource conceptual quiz.</li></ol></div>
+<div class="work"><ol><li>A <code> dig </code>walk of a name I pick, after I say go. Written routing paragraph.</li><li>Closed-resource conceptual quiz.</li></ol></div>
 <h2>Assigned reading</h2>
 <p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
-<ul class='reading locked-list'><li><div class='ttl'>Kurose/Ross DNS/routing selected (short) <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<ul class='reading locked-list'><li><div class='ttl'>Kurose/Ross DNS/routing selected, short, <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
 <h2>Mastery</h2>
 <div class="paper"><p>You can say what DNS returns and that routing is hop-by-hop toward an IP.</p></div>
 <nav class="pager">
@@ -49,7 +49,7 @@
 <a href="../lessons/c11-5.html">Next: C11.5 HTTP as an application of the above</a>
 </nav>
 
-<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
 </div></main>
 </div>
 <nav class="bottom-nav" aria-label="Primary">
