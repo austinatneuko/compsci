@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C2-lite.6 Choose and justify</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c2.html">C2-lite Data Structures (pre-gate)</a> · Phase 2 — Structures and construction</p>
+<p class="kicker">C2-lite.6 · 60 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Choose and justify</h1>
+<p class="lede">C2-lite Data Structures (pre-gate)</p>
+<div class='banner'><strong>Locked.</strong> Because the prerequisite course is not mastered. You are on C0.1. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Given a problem, pick a structure and justify the pick with operations and costs.</li><li>Name a case where a different structure wins.</li><li>Implement only the critical operations, not a museum of methods.</li><li>Sit a closed-resource implementation exam.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>The exit for C2-lite is judgment plus implementation. I will give you a problem. You will name the operations the problem actually needs, pick a structure, implement the critical pieces, state complexity, and name a case where another structure wins. People who skip the last sentence have a favorite structure, not a model.</p><p>A list beats a hash when n is tiny, when you need order you have not paid to maintain, when you will scan anyway. A hash beats a list when membership or lookup by key is the inner loop. A BST beats a hash when you need order and range. A stack is not a personality; it is a constraint on access. If you cannot name the operations, sit down before you code.</p><p>Heaps and graphs-as-ADTs wait for C2-remainder after Gate A. You will still meet BFS/DFS in C5-lite as algorithms on a picture of a graph. That is not the same as implementing the ADT. Do not pretend you did.</p><p>The exam is closed-resource. You will write real code. You will not have a model. If a structure is shaky, we remediate now; C4 assumes you can pick and implement.</p><p>C2-lite is judgment plus implementation, not a museum of types. A structure is the operations you need and the bill they send when n grows. You already use lists and dicts; now you must be able to build the ones a junior actually needs and say when a list beats a hash. Heaps and graphs-as-ADTs wait until after the gate. That is not because they are optional forever. It is because the hiring bar uses lists, hashes, and trees, and we will not pretend you implemented a heap if we did not sit with one. Every module ends with costs you can say out loud.</p><p>Judgment is a paragraph: the operations, the structure, the cost, the counter-case. People skip the last sentence because they have a favorite. I will pick problems where the favorite loses. The exam is closed. If a structure is still a rumor, we remediate it now. C4 will assume you can pick and implement without a tour of the internet.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Practice prompts I write: pick, justify, implement one operation, state a counter-case.</li><li>Closed-resource implementation exam.</li><li>One page (or a chat message) mapping each C2 structure to two real problems: one win, one loss.</li><li>No AI on the exam. No notes if I say closed.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Miller/Ranum review chapters as assigned <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li><li><div class='ttl'>My exam prep set <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>Given a problem, you pick, implement the critical operations, state cost, and name a case where a different structure wins.</p></div>
+<nav class="pager">
+<a href="../lessons/c2-5.html">Previous: C2-lite.5 Trees / BST</a>
+<a href="../lessons/c4-1.html">Next: C4.1 Specs and pre/post</a>
+</nav>
+
+<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
