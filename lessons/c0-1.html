@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/app.css">
+<link rel="stylesheet" href="../assets/work.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -45,6 +46,24 @@
 <h2>Work</h2>
 <p class='lock-note'>Exercises are assigned. Closed-resource. No solutions on this site.</p>
 <div class="work"><ol><li>Closed-resource. Do not search. Do not open Missing Semester. Do not start Bandit.</li><li>In CompSci chat, answer in one sentence, without looking it up: what do you think a shell is?</li><li>If you have a computer with a terminal, open it and look at the prompt. Do not follow a tutorial. Notice that it is waiting. That is all for now.</li><li>Write down one thing you have only ever done to a computer by clicking, and guess whether a program exists that does the same job by name. Do not run it yet.</li></ol></div>
+
+<section class="work-log" id="work-log" data-lesson="c0-1" data-unlocked="1">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-c0-1">Your answer</label>
+<textarea id="work-body-c0-1" name="body" rows="8" required></textarea>
+<p class="work-log-actions"><button type="submit" class="btn">Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+
 <h2>Assigned reading</h2>
 <p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
 <ul class='reading'><li><div class='ttl'>MIT Missing Semester 2026, lecture 1, The Shell <span class="pill locked">Locked</span></div><p class='note'>LOCKED until released in CompSci chat. Do not open it yet. I will assign the notes and exercises after your sentence, not before. No link on this page on purpose.</p></li></ul>
@@ -65,5 +84,7 @@
 <a class="" href="../about.html">About</a>
 </nav>
 <script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
 </body>
 </html>
