@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C15.4 Partitioning</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c15.html">C15 Distributed Systems and Data-Intensive Apps</a> · Phase 7 — Production-scale thinking</p>
+<p class="kicker">C15.4 · 90 h course · post-gate <span class="pill locked">Locked</span></p>
+<h1>Partitioning</h1>
+<p class="lede">C15 Distributed Systems and Data-Intensive Apps</p>
+<div class='banner'><strong>Locked.</strong> Until Gate A. Systems depth and remaining CS wait until you can apply. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Choose a partition key and name the skew.</li><li>Know rebalancing as a cost.</li><li>Keep secondary indexes as a distributed problem, not as 'just add an index.'</li><li>Refuse sharding a three-table app.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>Partitioning splits data by key so each node owns a slice. Hot keys skew load. Directory versus hash versus range are styles. Secondary indexes become scatter-gather. This is why splitting a users table is a month of engineering, not a weekend.</p><p>You will pick a key for a prompt and I will invent a skew. You will update the doc.</p><p>Distributed systems here is DDIA, not a required lab course. Failure and time, replication, consistency words, partitioning, transactions across nodes, logs and queues, idempotency, case studies. You will operate a small worker. You will write a design I will try to break. You will have named the happy path first. Exactly-once end-to-end is usually a lie. At-least-once plus an idempotent handler is an adult sentence.</p><p>Hot keys skew. Secondary indexes become scatter-gather. Splitting a users table is a month, not a weekend. Pick a key; I invent a skew; you update the doc. Refuse to shard a three-table app.</p><p>Write the failure down before I produce it. Consistency is a word with a definition. A queue you operate beats a drawing of a log you have not run. Idempotency is how retries become safe. Case studies keep the vocabulary from becoming bingo. 6.824 is recommended watching, not a required lab sequence. The design I attack is the exit.</p><p>Write the failure down before I produce it. Consistency is a word with a definition. A queue you operate beats a drawing of a log you have not run. Idempotency is how retries become safe. Case studies keep the vocabulary from becoming bingo. 6.824 is recommended watching, not a required lab sequence. The design I attack is the exit.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Key + skew + a mitigation (split, cache, separate hot path). Closed-resource.</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>DDIA partitioning chapter <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>A partition key with a named skew and a mitigation.</p></div>
+<nav class="pager">
+<a href="../lessons/c15-3.html">Previous: C15.3 Consistency</a>
+<a href="../lessons/c15-5.html">Next: C15.5 Transactions across nodes</a>
+</nav>
+
+<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
