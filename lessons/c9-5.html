@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C9.5 malloc and ownership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c9.html">C9 Computer Systems (C)</a> · Phase 6, Computer systems</p>
+<p class="kicker">C9.5 · 120 h course · post-gate <span class="pill locked">Locked</span></p>
+<h1>malloc and ownership</h1>
+<p class="lede">C9 Computer Systems (C)</p>
+<div class='banner'><strong>Locked.</strong> Until Gate A. Systems depth and remaining CS wait until you can apply. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Use malloc/free in pairs; check NULL.</li><li>State ownership: who frees this byte.</li><li>Find a leak with a tool I assign, or a disciplined audit on small code.</li><li>Implement a tiny allocator later if I assign it; today is correct use.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>The heap is the region malloc carves. You ask for n bytes, you get a pointer or NULL. You free exactly once. Double-free and use-after-free are undefined behavior. C9.9. Ownership is the comment and the design: this function allocates and the caller frees, or the opposite, never &quot;someone.&quot;</p><p>Python hid this. That is why Python was first. Now you pay the bill so you can understand a crash report and a GC conversation later without mysticism.</p><p>A small allocator or binary-format tool is a possible C9 project. Today is correct malloc use and a leak you fix.</p><p>Pair malloc and free. Check NULL. Ownership in a comment and a design. Double-free and use-after-free are undefined. A leak you introduce and remove. A later allocator project is possible. Today is correct use.</p><p>C is in the program for the machine model, not for product work you will ship. Python hid this. That was on purpose. Now you pay the bill so a crash report is not mysticism. You will be slower than in Python. That is the point. Draw before you type. Read the compiler.</p><p>Treat a sanitizer hit as a gift. Undefined behavior is not a crash you can shrug at. The hundred-line task is ordinary C, not a trick. If a loop in hiring pokes C, we schedule this course. We do not lower Gate A.</p><p>C is in the program for the machine model, not for product features. Pointers, layout, frames, malloc, bytes, a little assembly, caches, undefined behavior. CSAPP selected plus labs I adapt. You will draw stack and heap for a program I give you, find a memory bug with a method, and write correct C for a hundred-line task. Python hid this. That was on purpose. Now you pay the bill so a crash report is not mysticism.</p><p>C is in the program for the machine model, not for product features. Pointers, layout, frames, malloc, bytes, a little assembly, caches, undefined behavior. CSAPP selected plus labs I adapt. You will draw stack and heap for a program I give you, find a memory bug with a method, and write correct C for a hundred-line task. Python hid this. That was on purpose. Now you pay the bill so a crash report is not mysticism.</p><p>Pair malloc and free. Check NULL. Ownership in a comment and a design. Double-free and use-after-free are undefined. A leak you introduce and remove. A later allocator project is possible. Today is correct use.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>C labs with malloc. A leak you introduce and remove.</li><li>Ownership comment on every allocation in the homework.</li><li>Closed-resource. Sanitizers as assigned.</li></ol></div>
+
+<section class="work-log is-locked" id="work-log" data-lesson="c9-5" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-c9-5">Your answer</label>
+<textarea id="work-body-c9-5" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>CSAPP / CS107 heap labs as adapted <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>You malloc/free with ownership. A leak is a bug you can find with a method.</p></div>
+<nav class="pager">
+<a href="../lessons/c9-4.html">Previous: C9.4 Stack frames</a>
+<a href="../lessons/c9-6.html">Next: C9.6 Bytes, ints, floats</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
+</body>
+</html>

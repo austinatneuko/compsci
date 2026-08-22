@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C9.9 UB and safety</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c9.html">C9 Computer Systems (C)</a> · Phase 6, Computer systems</p>
+<p class="kicker">C9.9 · 120 h course · post-gate <span class="pill locked">Locked</span></p>
+<h1>UB and safety</h1>
+<p class="lede">C9 Computer Systems (C)</p>
+<div class='banner'><strong>Locked.</strong> Until Gate A. Systems depth and remaining CS wait until you can apply. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Name undefined behavior as &quot;the language does not promise a world.&quot;</li><li>List the UB we already hit: out-of-bounds, use-after-free, signed overflow, return-local.</li><li>Use sanitizers and warnings as the method.</li><li>Sit the C9 exit: draw stack/heap, find a memory bug with a method, write 100-line correct C.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>Undefined behavior is not &quot;it crashed.&quot; It is &quot;the standard allows the compiler to assume this never happens,&quot; so it may delete checks, format your disk in folklore, or appear to work until a demo. You will treat warnings and sanitizers as part of the compile. &quot;It works on my machine&quot; is the UB anthem.</p><p>Safety in C is discipline plus tools, not a type system like Rust, we are not switching languages. The exit is practical: draw, find a bug with a method, write correct C for a 100-line task. If a loop in hiring pokes OS/C, this is the course we schedule. we do not lower Gate A.</p><p>The language does not promise a world. Compilers assume UB never happens. Warnings and sanitizers are part of compile. Works on my machine is the anthem. Exit: draw, find a bug with a method, write a hundred correct lines. If a loop pokes C, we schedule this. We do not lower Gate A.</p><p>C is in the program for the machine model, not for product work you will ship. Python hid this. That was on purpose. Now you pay the bill so a crash report is not mysticism. You will be slower than in Python. That is the point. Draw before you type. Read the compiler.</p><p>Treat a sanitizer hit as a gift. Undefined behavior is not a crash you can shrug at. The hundred-line task is ordinary C, not a trick. If a loop in hiring pokes C, we schedule this course. We do not lower Gate A.</p><p>C is in the program for the machine model, not for product features. Pointers, layout, frames, malloc, bytes, a little assembly, caches, undefined behavior. CSAPP selected plus labs I adapt. You will draw stack and heap for a program I give you, find a memory bug with a method, and write correct C for a hundred-line task. Python hid this. That was on purpose. Now you pay the bill so a crash report is not mysticism.</p><p>C is in the program for the machine model, not for product features. Pointers, layout, frames, malloc, bytes, a little assembly, caches, undefined behavior. CSAPP selected plus labs I adapt. You will draw stack and heap for a program I give you, find a memory bug with a method, and write correct C for a hundred-line task. Python hid this. That was on purpose. Now you pay the bill so a crash report is not mysticism.</p><p>The language does not promise a world. Compilers assume UB never happens. Warnings and sanitizers are part of compile. Works on my machine is the anthem. Exit: draw, find a bug with a method, write a hundred correct lines. If a loop pokes C, we schedule this. We do not lower Gate A.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>A sanitizer lab. The exit exam pieces.</li><li>Closed-resource. No AI on the exam.</li></ol></div>
+
+<section class="work-log is-locked" id="work-log" data-lesson="c9-9" data-unlocked="0">
+<h2>Work log</h2>
+<p class="work-log-lead">Write your answer. I grade this. Opening the page does not make you competent.</p>
+<p class='lock-note'>Only C0.1 accepts work. This lesson is locked.</p>
+<div class="work-log-auth"></div>
+<form class="work-log-form">
+<label class="work-log-label" for="work-body-c9-9">Your answer</label>
+<textarea id="work-body-c9-9" name="body" rows="8" required disabled></textarea>
+<p class="work-log-actions"><button type="submit" class="btn" disabled>Submit</button></p>
+<p class="work-log-status" role="status"></p>
+</form>
+<div class="work-log-history">
+<p class="kicker">Prior attempts</p>
+<ol class="work-log-list"></ol>
+</div>
+</section>
+
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>CSAPP / CS107 safety notes as assigned <span class="pill locked">Locked</span></div><p class='note'>Assigned when we reach the lesson.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>Draw stack/heap. Find a memory bug with a method. Write correct C for a 100-line task.</p></div>
+<nav class="pager">
+<a href="../lessons/c9-8.html">Previous: C9.8 Memory hierarchy</a>
+<a href="../lessons/c10-1.html">Next: C10.1 Processes and syscalls</a>
+</nav>
+
+<p class="foot">CompSci v1.1. Locked 21 August 2026. 15 h/week default. Mastery, not completion.</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+<script src="../assets/config.js"></script>
+<script type="module" src="../assets/work.js"></script>
+</body>
+</html>
