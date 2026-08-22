@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1c1610">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>C1.9 Decomposition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<aside class="sidebar">
+<a class="brand" href="../index.html">CompSci<small>Austin Hurwitz</small></a>
+<nav class="side-nav">
+<a class="nav-link " href="../index.html">Now</a>
+<a class="nav-link on" href="../catalog.html">Catalog</a>
+<a class="nav-link " href="../grades.html">Grades</a>
+<a class="nav-link " href="../about.html">About</a>
+</nav>
+<div class="side-now">Now<br><a href="../lessons/c0-1.html">C0.1 The Shell</a></div>
+</aside>
+<main class="main" id="main"><div class="inner">
+
+<p class="crumb"><a href="../catalog.html">Catalog</a> · <a href="../courses/c1.html">C1 Programming Fundamentals (Python)</a> · Phase 1 — Foundations</p>
+<p class="kicker">C1.9 · 100 h course · pre-gate <span class="pill locked">Locked</span></p>
+<h1>Decomposition</h1>
+<p class="lede">C1 Programming Fundamentals (Python)</p>
+<div class='banner'><strong>Locked.</strong> Because C0 module 3 (editor and terminal workflow) is not mastered yet. C1 can start in parallel only after that. You may read so the catalog is a real map. Do not start the exercises or the assigned reading until this lesson is current. Ratings do not move from a URL.</div>
+
+<h2>Objectives</h2>
+<ul class='obj'><li>Take a fuzzy 80-line idea and split it into functions with names that are jobs.</li><li>Keep I/O at the edges: read in one place, decide in another, write in a third.</li><li>Name data: if a tuple is really a record, say what the fields are.</li><li>Delete the leftover comments that narrate <code>i += 1</code> and keep the ones that say why.</li><li>Use Git commits as the history of the split, not one dump at the end.</li></ul>
+<h2>Teaching</h2>
+<div class="prose"><p>Decomposition is the skill of turning “the program” into pieces you can hold. It is not an aesthetic of many tiny files. It is the ability to say: this function decides, this one parses, this one formats, this one is the process you would name to a person. C1.10 will ask you to design an 80–150 line program. This lesson is the rehearsal.</p><p>A useful split follows jobs, not language features. “All the lists” is not a job. “Parse a line into a record” is. “Decide whether the record counts” is. “Format a report line” is. When a function does two jobs, you will feel it in the name: <code>parse_and_write</code>, <code>check_and_update_and_log</code>. That name is a confession. Split.</p><p>I/O at the edges. If the function that decides also opens files and prints, you cannot test the decision without the filesystem and a human eyeball. Return data. Let <code>main</code> read argv, open files, print. This is the same sermon as return-versus-print, now at program scale.</p><p>Names are design. <code>data2</code> means you have not designed. <code>rows</code> is better. <code>payments</code> is better than <code>rows</code> if they are payments. If you need a comment to explain a name, the name lost. If you need a comment to explain a trick, keep the comment and consider deleting the trick.</p><p>Dead code is a kind of undeclared debt. Functions you wrote, stopped calling, and left “just in case” are how a homework becomes a junk drawer. Git already keeps the past. Delete from the present.</p><p>Work incrementally. The first running program may be a single file with three functions and a <code>main</code>. The second commit extracts a helper. The third adds tests for the helper. I will look at the log. A single commit titled “final” after two silent weeks is a story I do not believe and cannot review.</p><p>A test for the split: if I delete one function, can you describe the hole in one noun phrase? If the hole is a pile of leftover jobs, the seams are fake. If the hole is parse, or report, or decide, you are done enough to start C1.10.</p><p>If I ask you to trace the program on paper, I should be able to stay inside one function at a time. That is the practical meaning of a seam. C1.10 will not give you a new construct. It will ask whether these seams hold at 80 to 150 lines.</p><p>You will feel slower. That is the lesson costing what it costs. Speed without seams is how people write the 400-line main they cannot debug on the C1 exam.</p></div>
+<h2>Work</h2>
+<p class='lock-note'>Exercises are listed so you can see the shape of the work. They are not assigned. Do not start them. No solutions on this site.</p>
+<div class="work"><ol><li>Take one of your C1 homework programs that is getting long. Split it until every function is explainable in one sentence. Tests still pass.</li><li>Write <code>main</code> so that the decision functions do not call <code>print</code> or <code>open</code>. If they need text, they take a string or a list of lines.</li><li>In chat, list the functions and their one-sentence jobs. I will tell you which names are still two jobs.</li><li>Commit at least three times during the split, with messages that say what changed.</li><li>Closed-resource. No AI rewrite of the whole file. You may not paste the program into a model and ask it to “clean this up.”</li></ol></div>
+<h2>Assigned reading</h2>
+<p class='lock-note'>Assigned reading is released in CompSci chat, not because a link exists on a page.</p>
+<ul class='reading locked-list'><li><div class='ttl'>Think Python — refactoring / development plan, as assigned <span class="pill locked">Locked</span></div><p class='note'>Pages in chat.</p></li><li><div class='ttl'>Your own C1 homework — the primary text </div><p class='note'>Read your code as if you did not write it. That is the reading.</p></li></ul>
+<h2>Mastery</h2>
+<div class="paper"><p>A program with seams: I/O at the edge, functions with jobs, tests on the decisions, a Git history of the split. I review the repo. The page does not grade structure.</p></div>
+<nav class="pager">
+<a href="../lessons/c1-8.html">Previous: C1.8 Recursion I</a>
+<a href="../lessons/c1-10.html">Next: C1.10 Small programs</a>
+</nav>
+
+<p class="foot">CompSci v1.1 · locked 21 August 2026 · 15 h/week default · mastery, not completion</p>
+</div></main>
+</div>
+<nav class="bottom-nav" aria-label="Primary">
+<a class="" href="../index.html">Now</a>
+<a class="on" href="../catalog.html">Catalog</a>
+<a class="" href="../grades.html">Grades</a>
+<a class="" href="../about.html">About</a>
+</nav>
+<script src="../assets/app.js" defer></script>
+</body>
+</html>
